@@ -1,0 +1,718 @@
+{# Plantilla del formulario de reserva de derechos #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/select2-bootstrap.css') }}" />
+    <!-- select 2 -->
+    <link href="{{ asset('bundles/app/css/select2.css') }}" rel="stylesheet" />
+    <!-- Bootstrap Datepicker -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap-datepicker3.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/jquery-ui.css') }}" />
+<style>
+    .input-group .form-control {
+        width: 100% !important;
+    }
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerReservaDerechos.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <div class="mensaje">
+                                        {{ flashMessage }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="panel no-margin panel-primary">
+                                <div class="panel-heading"><!-- Encabezado  -->
+                                    <div class="tituloFormulario">FORMA ELECTR&Oacute;NICA DE RESERVA DE DERECHOS</div>
+                                </div><!-- Fin encabezado  -->
+                                <div class="panel-body general-container"><!-- Panel Body  -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                                            <p class="textoContenido">Recibida la informaci&oacute;n, 
+                                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                                            contacto contigo.                                    
+                                            </p>
+                                            <p class="textoContenido">La informaci&oacute;n proporcionada
+                                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con ABSOLUTA 
+                                            CONFIDENCIALIDAD de acuerdo a nuestro <span class="textoAzul">Aviso de Privacidad</span>
+                                            y a la Ley Federal de Protecci&oacute;n de Datos Personales 
+                                            en Posesi&oacute;n de Particulares.</p>
+                                            <p class=""><strong>Nota:</strong> Los campos señalados con 
+                                            <span class="required">*</span> en 
+                                            el formulario son obligatorios, para
+                                            procesar su solicitud.</p>
+                                        </div>
+                                    </div>
+                                    {{ form_start(formulario) }}
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="panel panel-default"><!-- Panel datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE CONTACTO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->  
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Campos Obligatorios | Tiempo de llenado de 
+                                                                este formato: 3 minutos</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.nombre, 'Nombre completo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.nombre, { 'attr': {'class': 'form-control'} }) }}
+                                                                {{ form_errors(formulario.contacto.nombre) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.correo, 'E-mail ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.correo) }}
+                                                                {{ form_errors(formulario.contacto.correo) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefono, 'Teléfono fijo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                <p class="textoFormulario">(no celular)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefono) }}
+                                                                {{ form_errors(formulario.contacto.telefono) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefonoMovil, 'Teléfono celular ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefonoMovil) }}
+                                                                {{ form_errors(formulario.contacto.telefonoMovil) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel datos de la reserva de derechos -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">LA RESERVA DE DERECHOS QUE DESEAS OBTENER ES PARA</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- Mensaje de ayuda -->
+                                                                <p class="textoFormulario">Elija solo una opci&oacute;n</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="radio" name="opcion" id="opcion" value="1" class="etiqueta2" onclick="guardarOpcion(this);" checked>Publicaci&oacute;n Periodica
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                {{ form_widget(formulario.publicacionPeriodica) }}
+                                                                {{ form_errors(formulario.publicacionPeriodica) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="radio" name="opcion" id="opcion" value="2" class="etiqueta2" onclick="activarLista(this,'registro_reserva_derechos_difusionesPeriodicas');">Difusiones Peri&oacute;dicas
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                {{ form_widget(formulario.difusionesPeriodicas) }}
+                                                                {{ form_errors(formulario.difusionesPeriodicas) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="radio" name="opcion" id="opcion" value="3" class="etiqueta2" onclick="guardarOpcion(this);">Promoci&oacute;n Publicitaria 
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                {{ form_widget(formulario.opcion) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="radio" name="opcion" id="opcion" value="4" class="etiqueta2" onclick="activarLista(this,'registro_reserva_derechos_grupos');">Personas o Grupos dedicados a actividades art&iacute;sticas
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                {{ form_widget(formulario.grupos) }}
+                                                                {{ form_errors(formulario.grupos) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="radio" name="opcion" id="opcion" value="5" class="etiqueta2" onclick="activarLista(this,'registro_reserva_derechos_personajes');">Personajes
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                {{ form_widget(formulario.personajes) }}
+                                                                {{ form_errors(formulario.personajes) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de la obra -->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <div class="tituloFormulario2">
+                                                            DATOS DEL TITULAR DE LA RESERVA <span class="required">*</span>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="panel-body"><!-- Formulario de autores -->
+                                                    {# Obteniendo los datos de la sesion #}
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Para agregar un &oacute; m&aacute;s autor(es) 
+                                                                o colaborador(es) rellene los campos y presione el boton agregar.
+                                                                </p>
+                                                            </div><!-- FIN MENSAJE DE AYUDA -->
+                                                        </div>
+                                                        <div class="row"><!-- LINEA 1  -->
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="nombreColaborador" class="etiqueta">Nombre Completo:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <input name="nombreColaborador" id="nombreColaborador" type="text" class="form-control" placeholder="Apellido, Nombre">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="representante" class="etiqueta">Representante Legal:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <input name="representante" id="representante" type="text" class="form-control" placeholder="">                                                                
+                                                            </div>
+                                                        </div><!-- Fin LINEA 1  -->
+                                                        <div class="row"><!-- LINEA 2  -->
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="nacionalidad" class="etiqueta">Nacionalidad:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <input name="nacionalidad" id="nacionalidad" type="text" class="form-control" placeholder="Nacionalidad">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="porcentaje" class="etiqueta">Porcentaje de participaci&oacute;n:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <div class="input-group">
+                                                                    <input name="porcentaje" id="porcentaje" type="text" class="form-control" placeholder="00">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="">%</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Fin LINEA 2  -->
+                                                        <div class="row"><!-- LINEA 3  -->
+                                                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                    <a herf="" class="btn btn-block btn-success botonAgregar" 
+                                                                       onclick="AgregarColaborador(); genera_tabla();"
+                                                                       data-toggle="tooltip" title="Agrega un autor o colaborador"> 
+                                                                    Agregar <span class="fa fa-plus"></span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                                        </div><!-- Fin LINEA 3  -->
+                                                        <div class="row"><!-- LINEA 4  -->
+                                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                                {{ form_widget(formulario.listaColaboradores) }}
+                                                                <div id="autores"><!--Muestra los autores agregados -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Fin LINEA 4  -->                                        
+                                                    <!--/form><!-- Fin formulario de autores -->
+                                                    </div><!-- Fin Panel body -->
+                                                </div><!-- Fin Panel -->
+                                                <div class="panel panel-default"><!-- Panel domicilio -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DOMICILIO <span class="required">*</span></div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.calle, 'Calle o Avenida: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.calle) }}
+                                                                {{ form_errors(formulario.domicilio.calle) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.numero, 'Número: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.numero) }}
+                                                                {{ form_errors(formulario.domicilio.numero) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.municipio, 'Municipio o delegación: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span> 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.municipio) }}
+                                                                {{ form_errors(formulario.domicilio.municipio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.ciudad, 'Ciudad o Población: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                      
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.ciudad) }}
+                                                                {{ form_errors(formulario.domicilio.ciudad) }}
+                                                            </div>                        
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.estado, 'Estado: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.estado) }}
+                                                                {{ form_errors(formulario.domicilio.estado) }}                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.pais, 'País: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.pais) }}
+                                                                {{ form_errors(formulario.domicilio.pais) }}
+                                                            </div>                        
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.codigoPostal, 'Código postal: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.codigoPostal) }}
+                                                                {{ form_errors(formulario.domicilio.codigoPostal) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+
+                                                            </div>                        
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel Domicilio -->
+                                                <div class="panel panel-default"><!-- Panel otros datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">OTROS DATOS DE CONTACTO TELÉFONOS Y CORREO ELECTRONICO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoDomicilio, 'Teléfono Domicilio: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoDomicilio) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoDomicilio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoOficina, 'Teléfono Oficina: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoOficina) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoOficina) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoMovil, 'Teléfono Móvil: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoMovil) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoMovil) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.fax, 'Fax: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.fax) }}
+                                                                {{ form_errors(formulario.OtrosContactos.fax) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">    
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.correo, 'E-mail: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.correo) }}
+                                                                {{ form_errors(formulario.OtrosContactos.correo) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel otros datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel Datos de facturacion -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE FACTURACION <span class="required">*</span></div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">La factura se expide con los datos 
+                                                                que nos proporciones en este bloque y pueden variar respecto 
+                                                                a los del titular de la marca.
+                                                                </p>
+                                                            </div><!-- FIN MENSAJE DE AYUDA -->
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.razonSocial, 'Nombre Completo o razón social: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                       
+                                                                <p class="textoFormulario">(Persona moral o física)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.razonSocial) }}
+                                                                {{ form_errors(formulario.factura.razonSocial) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.RFC, 'RFC: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.RFC) }}
+                                                                {{ form_errors(formulario.factura.RFC) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.domicilio, 'Domicilio Fiscal completo: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.domicilio) }}
+                                                                {{ form_errors(formulario.factura.domicilio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.codigoPostal, 'Código Postal: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.codigoPostal) }}
+                                                                {{ form_errors(formulario.factura.codigoPostal) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel Datos de facturacion -->
+                                            </div>                          
+                                        </div>
+                                        <div class="row"><!-- Mensaje -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <p class="textoContenido">
+                                                MARCANDUR es una Marca Registrada. Este
+                                                sitio web es propiedad de DURAN CABAÑAS 
+                                                Y ASOCIADOS, S.C., cuyo domicilio est&aacute; 
+                                                indicado al pie de esta p&aacute;gina, como 
+                                                responsable del resguardo y correcto 
+                                                uso de cualquier Informaci&oacute;n Personal
+                                                proporcionada en este formulario.
+                                                </p>
+                                                <p class="textoContenido">
+                                                Al presionar el bot&oacute;n ENVIAR FORMULARIO,
+                                                Usted manifiesta estar de acuerdo en que
+                                                su informaci&oacute;n sea protegida por las 
+                                                leyes mexicanas, y las cl&aacute;usulas de 
+                                                nuestro <a href="{{path('avisoPrivacidad')}}">Aviso de Privacidad</a>.</p>
+                                            </div>
+                                        </div><!-- Fin Mensaje -->
+                                        <div class="row"><!-- Botones -->
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <input type="reset" value="Cancelar" id="cancelar" name="cancelar" class="btn btn-block" data-toggle="tooltip" title="Borra el formulario">
+                                            </div>
+                                            <div class="col-lg-4 col-md-2 hidden-sm">
+                                                
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <button type="submit" class="btn btn-block btn-success botonAgregar" data-toggle="tooltip" title="Env&iacute;a el formulario">
+                                                    Enviar <span class="fa fa-paper-plane"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                        </div><!-- Fin Botones -->
+                                    {{ form_end(formulario) }}<!-- Fin Formulario  -->
+                                </div><!-- Fin Panel Body  -->
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>        
+            </section><!-- Fin Formulario -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!-- select2 -->
+    <script src="{{ asset('bundles/app/js/select2.min.js') }}" type="text/javascript"></script>
+    <!-- datepicker -->
+    <script src="{{ asset('bundles/app/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/app/js/bootstrap-datepicker.es.js') }}" type="text/javascript"></script>
+    <script>
+    /*Definición de las variables para JSON*/
+    var archivo = {
+        'Aplicación': "Marcandur",
+        'Fecha': '',
+        'Colaborador': [],
+        'estado': true
+    };
+    var cadena="";
+    archivo.Fecha=new Date();//Toma la fecha actual del sistema
+    var archivoAnterior = {
+        'Aplicación': "Marcandur",
+        'Fecha': '',
+        'Colaborador': [],
+        'estado': true
+    };
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+    /***********************Select2********************************************/        
+            $('.js-example-basic-single-multiple').select2({
+                placeholder: 'Seleccione una opccion',
+                lenguage:"es"
+            });            
+            $('.js-example-basic-single').select2();   
+/*************************** Calendario ***************************************/
+            $('.js-datepicker').datepicker({
+                format: "yyyy-mm-dd",
+                todayBtn: true,
+                language: "es",
+            });
+            localStorage.clear();
+        });//Fin funcion ready
+/*************************** Activar lista ************************************/
+        function activarLista(radio, lista){
+            if(radio.checked){
+                document.getElementById(lista).removeAttribute("disabled");
+                document.getElementById("registro_reserva_derechos_opcion").value=radio.value;
+            }
+        } 
+/****************************Leer archivo json*********************************/        
+        function LeerJSon(){
+            archivoAnterior = JSON.parse(localStorage.getItem('tabla.json'));
+            console.log("Anterior: "+archivoAnterior);
+            /**Se debe recorrer el arreglo de Colaborador e imprimir uno a la vez*/
+            if(archivoAnterior!= null){
+                if((archivoAnterior !== "undefined")&&(typeof archivoAnterior.Colaborador !== "undefined")){
+                    console.log("Existe el archivo.");
+                    var n = archivoAnterior.Colaborador.length;
+                    console.log("El arreglo es de "+n+" elementos.");
+                    for(var i=0; i<n; i++){//Agrega cada termino al objeto actual
+                        archivo.Colaborador.push(archivoAnterior.Colaborador.pop());
+                        console.log("Agregado: "+archivo.Colaborador);
+                    }
+                    console.log("Actualizado: "+JSON.stringify(archivo));
+                }
+                else{//No esta correcto el archivo
+                    console.log("Archivo equivocado, llame al administrador del sistema.");
+                    localStorage.clear();
+                }
+            }
+        }
+/************************Funcion para crear la tabla en pantalla.**************/
+function AgregarColaborador(){
+    LeerJSon();//Obtiene la información anterior
+    var nombre = document.getElementById("nombreColaborador").value;
+    var representante = document.getElementById("representante").value;
+    var nacionalidad = document.getElementById("nacionalidad").value;
+    var porcentaje = document.getElementById("porcentaje").value;
+    if(nombre!=null && nombre!=""){
+        if(representante!=null && representante!=""){
+            if(nacionalidad!=null && nacionalidad!=""){
+                if(porcentaje>0){//Procede si la cantidad es positiva
+                    /*Agrega un material a la lista*/
+                    archivo.Colaborador.push({ "nombre":nombre , "representante":representante, "nacionalidad":nacionalidad, "porcentaje":porcentaje });
+                    archivo.estado=false;//Esta en construcción
+                    console.log("El archivo es: "+archivo);
+                    /**Almacena en un archivo en el localStorage*/
+                    localStorage.setItem('tabla.json', JSON.stringify(archivo));
+                    sessionStorage.setItem('tabla.json', JSON.stringify(archivo));
+                }
+                else{
+                    alert("Agrege un porcentaje.");
+                }
+            }
+            else{
+                alert("Escriba la nacionalidad.");
+            }
+        }
+        else{
+            alert("Escriba el nombre del representante.");
+        }
+    }
+    else{
+        alert("Escriba un nombre completo del colaborador.");
+    }
+}        
+/*********************Funcion para crear la tabla con 6 columnas***************/
+    function genera_tabla() {
+        LimpiarTabla();
+  // Obtener la referencia del elemento div que contiene la tabla
+        var div = document.getElementById("autores");
+  // Crea un elemento <table> y un elemento <tbody>
+        var tabla   = document.createElement("table");
+        var tblBody = document.createElement("tbody"); 
+/*Crea el encabezado de la tabla.*/
+        var tbTitulos= document.createElement("thead");
+        var hileraTitulos = document.createElement("tr");              
+/*Crea las columnas*/                  
+        var celda = document.createElement("th");//El numero de item
+        celda.appendChild(document.createTextNode("#"));
+        hileraTitulos.appendChild(celda);
+        var celda2 = document.createElement("th");//El nombre del colaborador
+        celda2.appendChild(document.createTextNode("Nombre"));
+        hileraTitulos.appendChild(celda2);
+        var celda3 = document.createElement("th");//Representante legal
+        celda3.appendChild(document.createTextNode("Representante legal"));
+        hileraTitulos.appendChild(celda3);
+        var celda4 = document.createElement("th");//Nacionalidad
+        celda4.appendChild(document.createTextNode("Nacionalidad"));
+        hileraTitulos.appendChild(celda4);
+        var celda5 = document.createElement("th");//El porcentaje de participación
+        celda5.appendChild(document.createTextNode("% Par."));
+        hileraTitulos.appendChild(celda5); 
+/**Agrega la linea de titulos al encabezado de la tabla. */
+        tbTitulos.appendChild(hileraTitulos);
+/**Agrega la linea de titulos a la tabla*/
+        tabla.appendChild(tbTitulos);
+        if(typeof archivo.Colaborador !== "undefined"){
+/**Cuenta cuantas filas son*/
+            var n=archivo.Colaborador.length;
+/*Crea las filas*/
+            for (var i = 0; i < n; i++) {
+/*Crea las hileras de la tabla*/
+                var hilera = document.createElement("tr");
+/*  Crea un elemento <td> y un nodo de texto, haz que el nodo de
+texto sea el contenido de <td>, ubica el elemento <td> al final
+de la hilera de la tabla**/
+                var celda = document.createElement("td");
+                celda.appendChild(document.createTextNode(i+1));
+                hilera.appendChild(celda);
+                var celda2 = document.createElement("td");      
+/* Crea un nodo con el contenido del archivo*/                    
+                var lista=archivo.Colaborador.pop();
+                console.log("El elemento es: "+JSON.stringify(lista));
+                celda2.appendChild(document.createTextNode(lista.nombre));
+                hilera.appendChild(celda2);
+                var celda3 = document.createElement("td");
+                celda3.appendChild(document.createTextNode(lista.representante));
+                hilera.appendChild(celda3);
+                var celda4 = document.createElement("td");
+                celda4.appendChild(document.createTextNode(lista.nacionalidad));
+                hilera.appendChild(celda4);
+                var celda5 = document.createElement("td");
+                celda5.appendChild(document.createTextNode(lista.porcentaje));
+                hilera.appendChild(celda5);
+/*Agrega la hilera al final de la tabla (al final del elemento tblbody)*/
+                tblBody.appendChild(hilera);
+            } 
+/*Posiciona el <tbody> debajo del elemento <table>*/
+            tabla.appendChild(tblBody);
+    /*Agrega <table> en el <div>*/
+            div.appendChild(tabla);
+    /*modifica el atributo "border" de la tabla y lo fija a "1";*/
+            tabla.setAttribute("border", "0");
+    /*Asigna el estilo de la tabla con boostrap*/
+            tabla.setAttribute("class","table table-striped tabla");
+        }
+        else{
+            div.removeChild(tabla);
+        }
+
+    }    
+/******************************** Limpiar tabla ******************************/
+    function LimpiarTabla(){
+        // Obtener la referencia del elemento div que contiene la tabla
+        var div = document.getElementById("autores");
+        div.innerHTML="";
+    }
+/************************** Activar la fecha *********************************/
+    $(document).on('change', '#registro_derechos_autor_dadaAConocer_0', function ActivarFecha() {
+        if(document.getElementById("registro_derechos_autor_dadaAConocer_0").checked){
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("disabled");
+        }
+        else{
+            document.getElementById("registro_derechos_autor_fecha").setAttribute("disabled",true);
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("required");
+        }
+    });
+    $(document).on('change', '#registro_derechos_autor_dadaAConocer_1', function ActivarFecha() {
+        if(!document.getElementById("registro_derechos_autor_dadaAConocer_1").checked){
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("disabled");
+        }
+        else{
+            document.getElementById("registro_derechos_autor_fecha").setAttribute("disabled",true);
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("required");
+        }
+    });
+/**************** Activar los datos de la obra ********************************/
+    $(document).on('change', '#registro_derechos_autor_derivada_0',function ActivarDatos(){
+        if(document.getElementById("registro_derechos_autor_derivada_0").checked){
+                document.getElementById("registro_derechos_autor_tituloOriginal").removeAttribute("disabled");
+                document.getElementById("registro_derechos_autor_autor").removeAttribute("disabled");
+            }
+            else{
+                document.getElementById("registro_derechos_autor_tituloOriginal").setAttribute("disabled",true);
+                document.getElementById("registro_derechos_autor_autor").setAttribute("disabled",true);
+            }
+    });
+    $(document).on('change', '#registro_derechos_autor_derivada_1',function ActivarDatos(){
+        if(!document.getElementById("registro_derechos_autor_derivada_1").checked){
+                document.getElementById("registro_derechos_autor_tituloOriginal").removeAttribute("disabled");
+                document.getElementById("registro_derechos_autor_autor").removeAttribute("disabled");
+            }
+            else{
+                document.getElementById("registro_derechos_autor_tituloOriginal").setAttribute("disabled",true);
+                document.getElementById("registro_derechos_autor_autor").setAttribute("disabled",true);
+            }
+    });
+/************************* Opción *******************************************/   
+    function guardarOpcion(radio){
+        if(radio.checked){
+            document.getElementById("registro_reserva_derechos_opcion").value=radio.value;
+        }
+    } 
+/**************** Acción onclick del boton agregar autores. *******************/    
+    $('.botonAgregar').on('click', function(e){
+        var nombre = document.getElementById("nombreColaborador").value;
+        var nombreRepresentante = document.getElementById("representante").value;
+        var nacionalidad = document.getElementById("nacionalidad").value;
+        var porcentaje = document.getElementById("porcentaje").value;
+        var linea = document.getElementById("registro_reserva_derechos_listaColaboradores").value;
+        var linea2="Nombre completo: "+nombre+";Nombre del Representante: "+nombreRepresentante+";Nacionalidad: "+nacionalidad+";Porcentaje de participación: "+porcentaje;
+        document.getElementById("registro_reserva_derechos_listaColaboradores").value=linea.concat("|",linea2);
+    });    
+    </script>
+{% endblock %}
+

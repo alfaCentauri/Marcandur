@@ -1,0 +1,1094 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04/07/2018, 07:12:19 PM
+    Author     : Ing. Ricardo Presilla
+*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/************************** Servicios *****************************************/
+.tituloServicios{
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+/**************************Parallax********************************************/
+.parallax .wrap {
+  /*max-width: 870px;
+  margin: 0 auto;*/
+  height: 516px;
+}
+.negocio{
+    text-align: center;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 95px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.botonDespega{
+    position: relative;
+    top: 150px;
+    text-align: center;
+    z-index: 20;
+}
+@media (min-width: 320px) {
+    .negocio{
+        font-weight: 450;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .botonDespega{
+        position: relative;
+        top: 70px;
+        text-align: center;
+        z-index: 20;
+    }
+}
+@media (min-width: 400px) {
+    .negocio{
+        font-weight: 450;
+        font-size: 40px;
+        line-height: 80px;
+    }
+    .botonDespega{
+        position: relative;
+        top: 10px;
+        text-align: center;
+        z-index: 20;
+    }
+}
+@media (min-width: 640px) {
+    .negocio{
+        font-weight: 450;
+        font-size: 40px;
+        line-height: 80px;
+    }
+    .botonDespega{
+        position: relative;
+        top: 10px;
+        text-align: center;
+        z-index: 20;
+    }
+}
+@media (min-width: 768px) {
+    .negocio{
+        text-align: center;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 80px;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+    .botonDespega{
+        position: relative;
+        top: 100px;
+        text-align: center;
+        z-index: 20;
+    }
+}
+@media(min-width: 1024px){
+    .negocio{
+        text-align: center;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 95px;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+        .botonDespega{
+        position: relative;
+        top: 150px;
+        text-align: center;
+        z-index: 20;
+    }
+}
+.fondoHazCrecer{
+    background-image: url('../img/marcandur_home_0015_banner-brand-boost-fondo.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+/**************************  Thumbnail ****************************************/
+.thumbnail .caption h4 + .wrap {
+  margin-top: 0px;
+}
+.thumbnail .caption h4 + .wrap2 {
+  margin-top: 0px;
+}
+.thumbnail .caption .wrap2 p {
+  float: left;
+  width: 90%;
+}
+.thumbnail .caption .wrap2 a {
+  float: right;
+  margin-top: 0px;
+}
+.h4, h4{
+    font-size: 22px !important;
+}
+/************************** Conoce mas ****************************************/
+.conoce{
+    margin: 0px;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold; 
+    color: #000000;
+}
+.fondoConoceMas{
+    background-color: #21c2f8;
+}
+/*************************** Preguntas Frecuentes *****************************/
+.Preguntas{
+    right: 0px;
+}
+/*************************** Texto ********************************************/
+.texto{
+    text-align:center;
+    /*font-size: 18px;*/
+    color: #000000;
+    font-style: normal;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.textoAzul{
+    color: #21c2f8;
+}
+/*************************** Direccion ***************************************/
+.fondoGris{
+    background-color:#a0a0a0;
+    color: #ffffff;
+}
+.textoDireccion{
+    text-align:center;
+    font-size: 18px;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/***************************** Banner ****************************************/
+.jumbotron {
+  /*left: 10% !important;*/
+  top: 40% !important;
+  max-width: 600px;
+  max-height: 230px;
+}
+.jumbotron em {
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 35px;
+  font-weight: 800;
+  color: #21c2f8;
+  line-height: 70px;
+  letter-spacing: -2px;
+}
+.jumbotron .wrap p {
+  float: left;
+  width: 300px;
+  text-align: justify;
+}
+.jumbotron .wrap a {
+  float: right;
+  padding-left: 110px;
+  margin-top: 20px;
+}
+.jumbotron3 {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.8);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  min-width: 300px;
+  max-width: 600px;
+  max-height: 230px;
+}
+.jumbotron3 em {
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 35px;
+  font-weight: 800;
+  color: #21c2f8;
+  line-height: 70px;
+  letter-spacing: -2px;
+}
+.jumbotron3 .wrap:before,
+.jumbotron3 .wrap:after {
+  content: " ";
+  display: table;
+}
+.jumbotron3 .wrap:after {
+  clear: both;
+}
+.jumbotron3 .wrap:before,
+.jumbotron3 .wrap:after {
+  content: " ";
+  display: table;
+}
+.jumbotron3 .wrap:after {
+  clear: both;
+}
+.jumbotron3 .wrap:before,
+.jumbotron3 .wrap:after {
+  content: " ";
+  display: table;
+}
+.jumbotron3 .wrap:after {
+  clear: both;
+}
+.jumbotron3 .wrap:before,
+.jumbotron3 .wrap:after {
+  content: " ";
+  display: table;
+}
+.jumbotron3 .wrap:after {
+  clear: both;
+}
+.jumbotron3 .wrap p {
+  float: left;
+  width: 360px;
+  text-align: justify;
+}
+.jumbotron3 .wrap a {
+  float: right;
+  padding-left: 70px;
+  margin-top: 35px;
+}
+@media (max-width: 400px) {
+    .jumbotron {
+        display: none; 
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .jumbotron em {
+      font-size: 14px;
+    }
+    .jumbotron3 {
+        display: none; 
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .jumbotron3 em {
+      font-size: 14px;
+    }    
+}
+@media (max-width: 640px) {
+    .jumbotron {
+        display: none; 
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .jumbotron em {
+      font-size: 14px;
+    }
+    .jumbotron3 {
+        display: none; 
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .jumbotron3 em {
+      font-size: 14px;
+    }
+}
+/***************************Marcas registradas *****************************/
+.fondoMarcasRegistradas{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e3e3e3+0,ffffff+100&1+0,0+100 */
+    background: -moz-linear-gradient(left, rgba(227,227,227,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(227,227,227,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(227,227,227,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+.imagenMarcasRegistradas{
+    width: 545px;
+    min-height: 230px;
+    margin-top: 176px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 10px;
+    padding-right: 30px;
+}
+.imagenMarcasRegistradas2{
+    width: 600px;
+    min-height: 230px;
+    margin-top: 176px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 30px;
+}
+/**************************** Derechos de Autor *******************************/
+.fondoDerechosAutor{
+    margin-top: 128px;
+/*    margin-bottom: 0px;
+    background-image: url('../img/Banner4.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 320px;
+}
+.imagenDerechosAutor{
+    width: 100%;
+    /*height: 320px;*/
+}
+.textoTituloFase{
+    font-size: 28px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+}
+.textoTituloFase2{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+    color: #21c2f8;
+}
+.textoTituloFase3{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+}
+.textoFase{
+    font-style: normal;
+    text-align: justify;
+}
+.textoGris{
+    background-color: #e6e5e5;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.textoConoce{
+    padding-top: 10px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+}
+.textoConoce2{
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+}
+.flecha{
+    padding-left: 10px;
+    font-size: 25px;
+    font-style: normal;
+    text-align: justify;
+    color: #ffffff;
+}
+.botonGarantia{
+    color: #ffffff;
+    font-style: normal;
+    text-align: center;
+    background-color: #21c2f8;
+}
+.contenidoFaseDA1{
+    width: 100%;
+    min-height: 260px;
+    max-height: 500px;
+}
+.contenidoFaseDA2{
+    width: 100%;
+    min-height: 160px;
+    max-height: 500px;
+}
+.contenidoFaseDA3{
+    width: 100%;
+    min-height: 260px;
+    max-height: 500px;
+}
+@media(min-width: 1024px){
+   .contenidoFaseDA1{
+        width: 100%;
+        height: 260px;
+    }
+    .contenidoFaseDA2{
+        width: 100%;
+        height: 160px;
+    }
+    .contenidoFaseDA3{
+        width: 100%;
+        height: 260px;
+    } 
+}
+@media(min-width: 1200px){
+   .contenidoFaseDA1{
+        width: 100%;
+        height: 260px;
+    }
+    .contenidoFaseDA2{
+        width: 100%;
+        height: 160px;
+    }
+    .contenidoFaseDA3{
+        width: 100%;
+        height: 260px;
+    } 
+}
+@media(min-width: 1440px){
+   .contenidoFaseDA1{
+        width: 100%;
+        height: 260px;
+    }
+    .contenidoFaseDA2{
+        width: 100%;
+        height: 160px;
+    }
+    .contenidoFaseDA3{
+        width: 100%;
+        height: 260px;
+    } 
+}
+.botonMas{
+    font-size: 18px;
+}
+.flechaBoton{
+    right: 0px;
+    font-size: 30px;
+}
+/**************************** Otros servicios *********************************/
+.tituloOtrosServicios{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    color: #21c2f8;
+}
+.tituloOtrosServicios2{
+    font-size: 54px;
+    font-style: normal;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    text-align: justify;
+    color: #000000;
+}
+.tituloOtrosServicios3{
+    color: #222433;
+}
+.well7{
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+.textoOtrosServicios{
+    line-height: 1.5;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Helvetica,serif;
+    text-align: left;
+    color: #000000;
+}
+.imagenServicios{
+    margin-top: 10px;
+}
+.imagenServicios2{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.flechaMas{
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/************************** Servicios Marcas ********************************/
+.fondoMarcas{
+    margin-top: 120px;
+/*    background-image: url('../img/marcandur_servicios_marca-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 320px;
+    width: 100%;
+}
+.textoTituloFase4{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+}
+.SubTituloFase{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.contenidoFase1{
+    width: 100%;
+    height: 341px;
+}
+.contenidoFase2{
+    width: 100%;
+    height: 266px;
+}
+.contenidoFase3{
+    width: 100%;
+    height: 335px;
+}
+@media(min-width: 1024px){
+    .contenidoFase1{
+        width: 100%;
+        height: 341px;
+    }
+    .contenidoFase2{
+        width: 100%;
+        height: 266px;
+    }
+    .contenidoFase3{
+        width: 100%;
+        height: 335px;
+    } 
+}
+@media(min-width: 1200px){
+    .contenidoFase1{
+        width: 100%;
+        height: 285px;
+    }
+    .contenidoFase2{
+        width: 100%;
+        height: 246px;
+    }
+    .contenidoFase3{
+        width: 100%;
+        height: 311px;
+    } 
+}
+@media(min-width: 1440px){
+    .contenidoFase1{
+        width: 100%;
+        height: 305px;
+    }
+    .contenidoFase2{
+        width: 100%;
+        height: 266px;
+    }
+    .contenidoFase3{
+        width: 100%;
+        height: 331px;
+    } 
+}
+.imagenPDF{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    height: 200px;
+    width: 200px;
+}
+.textoInfor{
+    color: #000000;
+    font-style: normal;
+    text-align: justify;
+    font-size: 14px;
+}
+.textoContenido{
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.mensaje{
+    border-color: #d6e9c6;
+    border-left-style: solid;
+    border-left-width: 4px;
+    color: #000000;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #d6e9c6;
+}
+.mensaje_error{
+    border-color: #f00;
+    border-left-style: solid;
+    border-left-width: 4px;
+    color: #000000;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #ff5959;
+}
+/***************************** Marcas Internacionales *************************/
+.fondoMarcasrInternacionales{
+/*    background-image: url('../img/marcandur_home_0008_SERVICIOS-REGISTRO-DE-MARCAS-INTERNACIONALES.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 540px;
+}
+.radioInput{
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+/***************************** Invenciones *********************************/
+.fondoInvenciones{
+/*    background-image: url('../img/marcandur_servicios_registro-de-invenciones.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 320px;
+}
+.imagenInvenciones{
+    width: 100%;
+    /*height: 320px;*/
+}
+.tituloRegistroInvenciones{
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 25px;
+}
+.contenidoFaseI1{
+    width: 100%;
+    height: 300px;
+}
+.contenidoFaseI2{
+    width: 100%;
+    height: 320px;
+}
+.contenidoFaseI3{
+    width: 100%;
+    height: 320px;
+}
+@media(min-width: 1200px){  
+    .contenidoFaseI1{
+        width: 100%;
+        height: 300px;
+    }
+    .contenidoFaseI2{
+        width: 100%;
+        height: 300px;
+    }
+    .contenidoFaseI3{
+        width: 100%;
+        height: 220px;
+    }
+}
+.textoFigurasJuridicas{
+    height: 50px;
+    padding-top: 5px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: justify;
+    float: left;
+}
+.textoFigurasJuridicas2{
+    width: 100%;
+    padding-top: 0px;
+    font-size: 12px;
+    font-style: normal;
+    text-align: justify;
+}
+.textoFigurasJuridicas3{
+    height: 50px;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-left: 0px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: justify;
+    float: left;
+}
+.textoFigurasJuridicas4{
+    height: 50px;
+    margin-top: 5px;
+    padding-top: 2px;
+    padding-left: 0px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: justify;
+    float: left;
+}
+.iconoFlechaDer{
+    float: right;
+    height: 26px;
+    padding-top: 5px;
+    padding-left: 0px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: justify;
+}
+.fondoFigurasJuridicas{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #21c2f8;
+    height: 70px;
+    color: #ffffff;
+}
+.contenidoInvFase1{
+    width: 100%;
+    height: 500px;
+}
+.textoTituloInvFase1{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+}
+.tituloFAQ{
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    text-align: justify;
+}
+.botonPatentes{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*************************** Reserva Derechos *********************************/
+.fondoReservaDerechos{
+    margin-top: 120px;
+/*    background-image: url('../img/marcandur_servicios_0000_RESERVA-DE-DERECHOS.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 320px;
+}
+.imagenReservaDerechos{
+    width: 100%;
+    /*height: 320px;*/
+}
+.contenidoFaseRD1{
+    width: 100%;
+    height: 150px;
+}
+.contenidoFaseRD2{
+    width: 100%;
+    height: 79px;
+}
+.contenidoFaseRD3{
+    width: 100%;
+    height: 176px;
+}
+@media(min-width: 1024px){
+    .contenidoFaseRD1{
+        width: 100%;
+        height: 245px;
+    }
+    .contenidoFaseRD2{
+        width: 100%;
+        height: 117px;
+    }
+    .contenidoFaseRD3{
+        width: 100%;
+        height: 271px;
+    } 
+}
+@media(min-width: 1200px){
+     .contenidoFaseRD1{
+        width: 100%;
+        height: 267px;
+    }
+    .contenidoFaseRD2{
+        width: 100%;
+        height: 108px;
+    }
+    .contenidoFaseRD3{
+        width: 100%;
+        height: 293px;
+    }
+}
+@media(min-width: 1440px){
+    .contenidoFaseRD1{
+        width: 100%;
+        height: 267px;
+    }
+    .contenidoFaseRD2{
+        width: 100%;
+        height: 109px;
+    }
+    .contenidoFaseRD3{
+        width: 100%;
+        height: 295px;
+    }
+}
+/*************************** PREGUNTAS FRECUENTES *****************************/
+h4{
+    color: #000000;
+}
+.listaAlfa{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    /*list-style:lower-alpha;*/
+    text-align: justify;
+    font-style: normal;
+}
+.menuFAQ1{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ2{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ3{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ4{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ5{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ6{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.menuFAQ7{
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    background-color: #e3e4e6;
+    border: 1px solid #e3e4e6;
+}
+.panelContraido{
+    color: #000000;
+    background-color: #21c2f8;
+    border-color: #dddddd;
+}
+.panelContraido > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #dddddd;
+}
+.panelContraido> .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #dddddd;
+}
+/**************************** Nosotros ****************************************/
+.fondoNosotros{
+    background-image: url("../img/marcandur_nosotros_0000_quienes--somos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TituloNosotros{
+    margin-top: 0px;
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-style: normal;
+    text-align: justify;
+}
+.textoNosotros{
+    margin-bottom: 10px;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-style: normal;
+    text-align: justify;
+}
+.imagenNosotros{
+    margin-top: 10px;
+}
+/**************************** Contacto ***************************************/
+.fondoContacto{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    background-image: url('../img/marcandur_contactos_BANNER.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+.tituloContacto{
+    font-size: 40px;
+    font-style: normal;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    color: #000000;
+}
+.textoContacto{
+    text-align:center;
+    font-size: 22px;
+    color: #000000;
+    font-style: normal;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.listado{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font: 400 15px 'Raleway', sans-serif;
+    line-height: 24px;
+    padding: 28.5px 18px 28.5px;
+    color: #222533;
+    padding-left: 30px;
+    width: 100% !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    border-radius: 0;
+}
+.tNombre{
+    width: 100%;
+}
+.tTelefono{
+    font-size: 22px;
+    font-style: normal;
+}
+.tCorreo{
+    font-size: 22px;
+    font-style: normal;
+}
+.tMensaje{
+    font-size: 22px;
+    font-style: normal;
+}
+.botonCancelar{
+    background-color: #e3e4e6;
+}
+/********************** Formulario solicitud de derechos autor*****************/
+.tituloFormulario{
+    font-size: 34px;
+    color: #000000;
+}
+.tituloFormulario2{
+    font-size: 28px;
+    color: #000000;
+}
+.textoFormulario{
+    color: #e78f08;
+    font-size: 14px;
+}
+.etiqueta{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.botonAgregar{
+    text-align: center;
+    color: #ffffff;
+}
+.requerido{
+    text-align: center;
+    color: red;
+}
+.botonCancelar2{
+    background-color: #e3e4e6;
+    border: 1px solid #a0a0a0;
+    color: #a0a0a0;
+}
+.fecha{
+    width: 80%;
+}
+.celda{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.celdaNumero{
+    padding-top: 34px !important;
+}
+.noEditable{
+    color: black;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    background-color: #ffffff;
+    border: 0px;
+}
+/**************************** Para el IMPI *******************************/
+.fondoIMPI{
+    margin-top: 128px;
+/*    margin-bottom: 0px;
+    background-image: url('../img/banner2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    height: 320px;
+}
+.imagenIMPI{
+    width: 100%;
+/*    max-height: 410px;*/
+}
+.navbar-default {
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px !important;
+  font-weight: 700;
+}
+/*************************** Asesoria Legal ***********************************/
+.imagenAsesoriaLegal{
+    width: 100%;
+    margin-top: 10px;
+}
+/*************************** Lista de precios *********************************/
+.TituloPrecios{
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 30px;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-style: normal;
+    text-align: justify;
+}
+.tituloFormaPago{
+    font-size: 20px;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+}
+/************************** Whatsapp ******************************************/
+div.ccw_plugin, .inline {
+    display: inline;
+}
+.chatbot {
+    position: fixed;
+    right: 66px !important;
+    bottom: 80px !important;
+    z-index: 99999999;
+}
+.ccw_plugin .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+/************************** Calendario ***************************************/
+.datepicker{
+    width: 220px;
+    height: auto;
+}

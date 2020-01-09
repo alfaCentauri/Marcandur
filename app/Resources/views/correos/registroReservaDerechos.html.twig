@@ -1,0 +1,50 @@
+{# Mensaje del correo de la solicitud del registro de reserva de derechos #}
+<h1>Datos de Contacto:</h1>
+<p>Nombre completo: {{ reservaDerechos.contacto.nombre|e }}.</p>
+<p>E-mail: {{ reservaDerechos.contacto.correo|e }}.</p>
+<p>Teléfono fijo: {{ reservaDerechos.contacto.telefono|e }}.</p>
+<p>Teléfono celular: {{ reservaDerechos.contacto.telefonoMovil|e }}.</p>
+
+<h2>Datos de la Reserva de Derechos</h2>
+{% if reservaDerechos.opcion == '1' %}
+<p>Publicaci&oacute;n Periodica {{reservaDerechos.publicacionPeriodica|e}}</p>
+    {% elseif reservaDerechos.opcion == '2' %}
+    <p>Difusiones Peri&oacute;dicas {{reservaDerechos.difusionesPeriodicas|e}}</p>    
+        {% elseif reservaDerechos.opcion == '3' %}
+            <p>Promoci&oacute;n Publicitaria </p>
+            {% elseif reservaDerechos.opcion == '4' %}
+                <p>Personas o Grupos dedicados a actividades art&iacute;sticas
+                    {{reservaDerechos.grupos|e}}</p>
+                {% elseif reservaDerechos.opcion == '5' %}
+                    <p>Personajes {{reservaDerechos.personajes|e}}</p>
+{% endif %}
+
+<H2>Datos del Autor o Colaborador de la Obra</H2>
+{% if reservaDerechos.listaColaboradores is defined %} 
+    {{ reservaDerechos.listaColaboradores|e }}
+{% endif %}
+
+<h2>Domicilio</h2>
+<p>Calle o Avenida: {{ reservaDerechos.domicilio.calle|e }}.</p>
+<p>Número: {{ reservaDerechos.domicilio.numero|e }}.</p>
+<p>Municipio o delegación: {{ reservaDerechos.domicilio.municipio|e }}.</p>
+<p>Ciudad o Población: {{ reservaDerechos.domicilio.ciudad|e }}.</p>
+<p>Estado: {{ reservaDerechos.domicilio.estado|e }}.</p>
+<p>País: {{ reservaDerechos.domicilio.pais|e }}.</p>
+<p>Código postal: {{ reservaDerechos.domicilio.codigoPostal|e }}.</p>
+
+<h2>Otros datos de contacto teléfonos y correo electrónico</h2>
+<p>Teléfono Domicilio: {{ reservaDerechos.OtrosContactos.telefonoDomicilio|e }}.</p>
+<p>Teléfono Oficina: {{ reservaDerechos.OtrosContactos.telefonoOficina|e }}.</p>
+<p>Teléfono Móvil: {{ reservaDerechos.OtrosContactos.telefonoMovil|e }}.</p>
+<p>Fax: {{ reservaDerechos.OtrosContactos.fax|e }}.</p>
+<p>E-mail: {{ reservaDerechos.OtrosContactos.correo|e }}.</p>
+
+<h2>Datos de Facturación</h2>
+<p>Nombre Completo o razón social: {{ reservaDerechos.factura.razonSocial|e }}.</p>
+<p>RFC: {{ reservaDerechos.factura.RFC|e }}.</p>
+<p>Domicilio Fiscal completo: {{ reservaDerechos.factura.domicilio|e }}.</p>
+<p>Código Postal: {{ reservaDerechos.factura.codigoPostal|e }}.</p>
+
+<p>Correo emitido de la sección de Servicios de Marcas. URL: http://reservaDerechosndur.com.mx/reservas-derechos.html
+</p>

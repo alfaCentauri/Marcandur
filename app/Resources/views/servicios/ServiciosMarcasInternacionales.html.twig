@@ -1,0 +1,115 @@
+{# Plantilla de la vista de servicios de derechos #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main>  
+            {% include 'servicios/bannerMarcasInternacionales.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase">
+                            <p class="textoContenido">MARCANDUR te puede representar
+                            para que realices tu <span class="textoAzul">registro de marcas internacional </span>
+                            en casi cualquier pa&iacute;s del mundo, desde M&eacute;xico, y en 
+                            idioma español. Gracias a que pertenecemos a la red 
+                            más amplia, internacional y de alto prestigio, de 
+                            especialistas en Propiedad Industrial. 
+                            </p>
+                            <p class="textoContenido">Deja en nuestras manos tu 
+                            <span class="textoAzul">registro de marcas internacional</span>
+                            , ahorra costos de traslado, hospedaje y evita el 
+                            riesgo de contratar un despacho sin referencia previa. 
+                            Evade las confusiones que te puedan ocasionar otros 
+                            idiomas y reduce los tiempos de registro al máximo, 
+                            trabajando con un despacho especializado desde M&eacute;xico.
+                            </p>                                  
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-4 col-md-3 col-sm-12"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioRegistroInternacional') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>                        
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Otros servicios -->
+            {% include 'servicios/otrosServicios5.html.twig' %}
+            <!-- Fin Otros servicios -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

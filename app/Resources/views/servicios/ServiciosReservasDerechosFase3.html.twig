@@ -1,0 +1,69 @@
+{# Plantilla de servicios de Marcas Fase 1 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerReservaDerechos.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 3: EMISIÓN Y ENVÍO DEL CERTIFICADO
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase">
+                            <p class="textoContenido">Finalizada la <span class="textoAzul">FASE 2: 
+                            PRESENTACIÓN DE LA SOLICITUD DE TU RESERVA DE DERECHOS</span>, 
+                            te enviaremos de inmediato por correo electrónico una 
+                            copia digital del documento oficial para que compruebes 
+                            que tu registro fue iniciado.                                    
+                            </p>
+                            <p class="textoContenido">Al término de aproximadamente 
+                            20 días hábiles, te haremos llegar hasta tu casa u 
+                            oficina el <span class="textoAzul">Certificado de 
+                            Reserva de Derechos</span> original por mensajería 
+                            especializada.</p>
+                            <p class="textoContenido">Con él tendrás garantizado 
+                            el derecho de Uso Exclusivo que la Ley reconoce.</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% include 'servicios/solicitudReservaDerechos.html.twig' %}
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

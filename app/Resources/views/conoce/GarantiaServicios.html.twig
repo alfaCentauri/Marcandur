@@ -1,0 +1,177 @@
+{# Plantilla de Garantia de servicios #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            
+            <!-- Fin Seccion del Banner-->
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h2>Las Siete Garantías de Marcandur</h2>
+                            <ol class=""> 
+                                <li>
+                                    <h3>I. SATISFACCIÓN TOTAL:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que si con base en nuestra 
+                                    asesoría profesional no se alcanzaran los 
+                                    resultados que tú esperas, y esto ocurriera 
+                                    como consecuencia de una atención deficiente 
+                                    o negligente por parte de nuestro personal, 
+                                    <strong>MARCANDUR te reembolsará el 100% de los 
+                                    honorarios pagados **</strong>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>II. PROFESIONALISMO:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que recibirás de nosotros la 
+                                    mejor atención legal y técnica para ofrecerte 
+                                    la más adecuada solución integral en Propiedad 
+                                    Intelectual de acuerdo a tus necesidades 
+                                    específicas.
+                                    </p>
+                                    <p class="textoContenido">
+                                    MARCANDUR está conformado por un selecto 
+                                    equipo de profesionistas altamente
+                                    especializados y expertos en materia 
+                                    de Propiedad Intelectual.
+                                    </p>
+                                    <p class="textoContenido textoAzul text-center">
+                                    ¡No somos simples gestores, somos abogados y 
+                                    ejecutivos especializados!
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>III. RESPUESTA INMEDIATA:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos responder cualquier solicitud 
+                                    el mismo día, sin necesidad de que te muevas 
+                                    de tu casa u oficina, ya sea por correo 
+                                    electrónico, o de viva voz si prefieres 
+                                    contactarnos por videoconferencia por Internet, 
+                                    o vía telefónica.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>IV. ATENCIÓN PERSONALIZADA:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que te asignaremos un número 
+                                    de cliente único, así como un ejecutivo
+                                    especializado quien te atenderá y procesará 
+                                    tu trámite de principio a fin sin necesidad 
+                                    de estar pasando de persona en persona.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>V. HONESTIDAD Y TRANSPARENCIA:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que en todo momento recibirás 
+                                    de nosotros los acuses de recibo de las 
+                                    autoridades correspondientes, para acreditar 
+                                    que tu trámite ha sido realizado en tiempo y 
+                                    forma según hayas contratado. Así estarás 
+                                    seguro de que, tu pago o depósito ha sido 
+                                    aplicado al servicio que hayas solicitado.
+                                    </p>
+                                    <p class="textoContenido">
+                                    Nuestro éxito profesional se basa en la honestidad.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>VI. CONFIDENCIALIDAD:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que ningún dato o ejemplar 
+                                    proporcionado por ti, será revelado a persona 
+                                    alguna no autorizada, bajo ninguna circunstancia. 
+                                    Toda la información legal, artística, o comercial, 
+                                    así como los datos personales de nuestros clientes, 
+                                    son absolutamente confidenciales.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>VII. INFORMACIÓN CONSTANTE:</h3>
+                                    <p class="textoContenido">
+                                    Te Garantizamos que en todo momento te mantendremos 
+                                    informado sobre los avances de cualquiera de 
+                                    tus solicitudes o trámites. Nuestros teléfonos 
+                                    y dirección electrónica de contacto estarán 
+                                    a tu total disposición en horarios de atención, 
+                                    siempre que quieras consultar a tu ejecutivo 
+                                    asignado.
+                                    </p>
+                                    
+                                </li>
+                            </ol>
+                            <p class="textoContenido">
+                            (**)Consulta en la sección Términos Legales, el 
+                            procedimiento y condiciones en que es aplicable la 
+                            Garantía de Satisfacción Total.
+                            </p>                                   
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <a href="{{ path('garantia')}}" class="btn-link fa-angle-right flecha"></a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>  
+                                <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                            </div>
+                        </div>
+                    </div>                        
+                </div>        
+            </section><!-- Fin Texto -->
+             <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto -->    
+        </main> 
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script></script>
+{% endblock %}

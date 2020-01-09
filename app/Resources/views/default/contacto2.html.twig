@@ -1,0 +1,195 @@
+{# Plantilla de la vista contacto #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main>        
+            <!-- Seccion Banner -->
+            <section class="fondoContacto">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="">
+
+                            </div>
+                        </div>
+                    </div>                         
+                  </div>        
+            </section><!-- Fin Banner -->
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">Reciba la informaci&oacute;n, 
+                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                            contacto contigo.
+                            </p>
+                            <p class="textoContenido">La informaci&oacute;n propocionada 
+                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con 
+                            ABSOLUTA CONFIDENCIALIDAD de acuerdo a nuestro Aviso 
+                            de Privacidad y a la Ley Federal de Protecci&oacute;n 
+                            de Datos Personales en Posesi&oacute;n de Particulares.
+                            </p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>
+            </section><!-- Fin Texto -->
+            <section class="well well4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h2 class="tituloContacto">
+                            DESEA <strong>INFORMACI&Oacute;N RELACIONADA</strong> CON:
+                            </h2>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12">
+                    {% for flashMessage in app.session.flashbag.get('error') %}
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error</strong> {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                        {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Exito: </strong> {{ flashMessage }}
+                            </div>
+                        {% endfor %}
+                </div></div>
+
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            {{ form_start(formulario) }}
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contact-form-loader"></div>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                            {#{ form_label(formulario.asunto) }#}
+                                            {{ form_widget(formulario.asunto) }}                                            
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">                                
+                                            {#{ form_label(formulario.nombre) }#}
+                                            {{ form_widget(formulario.nombre) }}
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                            {#{ form_label(formulario.correo) }#}
+                                            {{ form_widget(formulario.correo) }}                                            
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                            {#{ form_label(formulario.telefono) }#}
+                                            {{ form_widget(formulario.telefono) }}                                            
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                            {#{ form_label(formulario.telefonoMovil) }#}
+                                            {{ form_widget(formulario.telefonoMovil) }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12"> 
+                                            {#{ form_label(formulario.mensaje) }#}
+                                            {{ form_widget(formulario.mensaje) }}                                            
+                                        </div>    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12" >
+                                            <div class="g-recaptcha" data-sitekey="6LdUT3YUAAAAANol1EiO67pot2b-pVo5As5ukhDE" data-callback="correctCaptcha"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> 
+                                            <!--  <label class="recaptcha"> <span class="empty-message">*Este campo es requerido.</span> </label> -->
+                                            <div class="btn-wr text-primary">
+                                                {{ form_widget(formulario.Save) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> </div>
+                                    </div>
+                                </fieldset>
+                            {{ form_end(formulario) }}
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section>
+        <footer>
+            <section class="fondoGris">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoDireccion">
+                            <p>Av. Adolfo López Mateos #20</p>
+                            <p>Piso 3, Col. Santa Cruz del Monte , Naucalpan</p>
+                            <p>C.P. 53110</p>
+                            <p>CONTACT&Aacute;NOS DE MANERA INMEDIATA A LOS TEL&Eacute;FONOS (0155)5373-2996,(0155)2789-7524</p>
+                            <p>+52-1-55-7112-6384 contacto@marcandur.com</p>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+            <section class="well1">
+                <div class="container"> 
+                    <p class="rights text-center">
+                        MARCANDUR &#169; <span id="copyright-year"></span>
+                        <a href="index-5.html">Privacy Policy</a>
+                    </p>          
+                </div> 
+            </section>    
+        </footer>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu4").setAttribute("class","active");
+/*************************** Tooltip ***************************************/
+            $('[data-toggle="tooltip"]').tooltip();              
+        });
+        function Mensaje(){
+            alert("Mensaje enviado");
+        }
+    </script>
+
+
+
+    <script>
+
+        function correctCaptcha(response) {
+            //alert(response);
+            $("#form_Save").attr('disabled', false);
+        };
+
+    </script>
+{% endblock %}
+

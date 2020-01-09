@@ -1,0 +1,490 @@
+{# Plantilla de preguntas frecuentes de Invenciones #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .panel-title {
+      font-size: 24px !important;
+    }
+    .menuFAQ2{
+        background-color: #ffffff !important;
+        border: 1px solid #21c2f8;
+    }
+    .menuFAQ2:hover{
+        background-color: #e3e4e6 !important;
+        border: 1px solid #e3e4e6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            {% include 'servicios/bannerInvenciones.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                            <!-- Titulo y submenu -->
+                            {% include 'preguntas/encabezado.html.twig'%}
+                            <!-- Fin Titulo y submenu -->
+                            <!-- Contenido contraible -->
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                1. ¿Qu&eacute; es una Patente?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse in">
+                                      <div class="panel-body">
+                                          <p class="textoContenido">Es el derecho que la ley 
+                                            otorga a una persona (moral o física) de explotar 
+                                            económicamente y de forma exclusiva su invención.</p>  
+                                            <p class="textoContenido">Esto significa que nadie 
+                                            más puede vender, usar, o en general aprovechar 
+                                            dicha invención sin el consentimiento del titular
+                                            de la patente, salvo que, exista un acuerdo entre 
+                                            ambas partes que contemple el pago de regalías.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                                2. ¿Qué características debe de tener 
+                                                    una invención para ser patentada?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Son patentables cualquier 
+                                            productos o proceso industrial que contengan 
+                                            un elemento de novedad, que hayan surgido como 
+                                            resultado de una actividad inventiva (El 
+                                            resultado o funcionamiento de la invención no 
+                                            debe ser evidente para un técnico en la materia), 
+                                            por último, es indispensable que tenga un uso 
+                                            práctico.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                                3. ¿Qué ventajas se adquieren al 
+                                                obtener el Registro de Patente?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">El titular de una patente 
+                                            obtiene el derecho de explotarla comercialmente
+                                            de manera exclusiva, por lo que, en caso de que 
+                                            un tercero utilice, fabrique, use o venda el
+                                            producto o el proceso protegido, estará infringiendo 
+                                            este derecho, por lo tanto, el titular podrá
+                                            demandar por daños y perjuicios ante Tribunales 
+                                            Federales, previo reconocimiento de violación 
+                                            de derechos, mismos que se hacen valer ante 
+                                            el Instituto Mexicano de la Propiedad 
+                                            Industrial (IMPI). </p>
+                                            <p class="textoContenido">De igual manera el titular 
+                                            de la patente, durante el periodo de vigencia del 
+                                            registro podrá autorizar su producción, distribución 
+                                            o venta, a través de un contrato de licencia de 
+                                            uso, a cambio del pago de regalías. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                                4. ¿Cómo es el trámite para una Patente y 
+                                                cuánto tiempo demora?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Una vez que se presenta 
+                                            una solicitud de registro ante la autoridad, 
+                                            es sometida a dos exámenes:</p>
+                                            <ol type="a">
+                                                <li class="listaAlfa">a) Examen de forma. Se 
+                                                verifica que la solicitud de registro cumpla 
+                                                con las especificaciones que por Ley se exigen 
+                                                en cuanto a los datos asentados en ella y en 
+                                                los anexos que describen la invención a proteger.</li>
+                                                <li class="listaAlfa">b) Examen de fondo. La
+                                                solicitud de registro y sus anexos se someten 
+                                                a un estudio que permitirá determinar si la 
+                                                invención cuenta con los requisitos de novedad, 
+                                                actividad inventiva y aplicación industrial, 
+                                                requeridos por la ley. </li>
+                                            </ol>
+                                            <p class="textoContenido">El examen de fondo incluye 
+                                                la búsqueda de invenciones anteriores a nivel 
+                                                mundial, por ello un trámite de patente demora 
+                                                en promedio, de tres a cinco años, a partir 
+                                                del momento en el que se ingresa la solicitud 
+                                                a registro. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                                5. ¿Qué tipo de invenciones son susceptibles 
+                                                de ser patentables?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse5" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ol type="a">
+                                                <li class="listaAlfa">
+                                                    a) Un producto específico totalmente nuevo.
+                                                </li>
+                                                <li class="listaAlfa">
+                                                    b) Un proceso de fabricación novedoso con 
+                                                    aplicaciones igualmente nuevas.
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                                6. ¿Cualquier invención verdaderamente novedosa 
+                                                se considera Patente?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse6" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">No todo lo inventando 
+                                            y novedoso se considera Patente. En México la ley 
+                                            contempla tres figuras de protección dependiendo
+                                            de sus características específicas y el grado de 
+                                            innovación y aplicación técnica que presentan.</p>
+                                            <p class="textoContenido">Las invenciones se clasifican en:</p>
+                                            <ol type="a">
+                                                <li class="listaAlfa">a) Patentes.</li>
+                                                <li class="listaAlfa">b) Diseños Industriales.</li>
+                                                <li class="listaAlfa">c) Modelos de Utilidad.</li>
+                                            </ol>
+                                            <p class="textoContenido">Es común que los inventores 
+                                            pierdan tiempo y dinero solicitando un Registro 
+                                            de Patente cuando en realidad las características 
+                                            de su invención corresponden a un Modelo de Utilidad. 
+                                            Desde el inicio del proceso de registro, uno de 
+                                            nuestros especialistas en Propiedad Intelectual 
+                                            dictaminará la figura de protección que corresponde 
+                                            a su invención con la finalidad de evitar complicaciones 
+                                            y gastos innecesarios durante el proceso.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                                7. ¿Qué invenciones NO son patentables?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse7" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Las ideas por sí mismas 
+                                            no son patentables pues cualquier persona tiene 
+                                            derecho a pensar e imaginar. No obstante, si esa 
+                                            idea puede materializarse y convertirse en un proceso 
+                                            o un producto totalmente nuevos, entonces ese 
+                                            producto o proceso sí son susceptibles de ser 
+                                            patentados.</p>
+                                            <p class="textoContenido">No son patentables las 
+                                            ideas de negocio, los servicios, las recetas de 
+                                            cocina, los juegos de azar, ni los procesos de 
+                                            atención a clientes, entre otros.</p>
+                                            <p class="textoContenido">En el caso de la novedad,
+                                            ésta no se limita a un país o región. Por ejemplo, 
+                                            si existe un producto que se manufactura y vende 
+                                            en determinado país, no se podría decir que es 
+                                            novedoso al pretenderlo registrar en cualquier 
+                                            otra parte del mundo, pues es un producto que ya 
+                                            existe, simplemente es desconocido fuera de su 
+                                            país de origen.</p>
+                                            <p class="textoContenido">Para obtener un registro
+                                            de Patente es necesario acreditar que la invención 
+                                            no existe ni ha existido en ninguna parte del mundo 
+                                            y por ende es novedosa.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                                8. ¿Qué es un Diseño Industrial?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse8" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Un Diseño industrial es 
+                                            la concepción original de líneas, figuras, o grupo 
+                                            de ambas destinadas a su producción en serie.Los 
+                                            Diseños Industriales se dividen en dos:</p>
+                                            <ol type="a">
+                                                <li class="listaAlfa">a) Los Dibujos Industriales: 
+                                                que son todas aquellas combinaciones de figuras, 
+                                                líneas o colores que se incorporan a un producto
+                                                industrial con fines de ornamentación y que 
+                                                le brindan un aspecto peculiar y propio.<br>
+                                                Ejemplo: Las figuras y colores en el estampado 
+                                                de una playera de fútbol o de una corbata.
+                                                </li>
+                                                <li class="listaAlfa">b) Los Modelos Industriales: 
+                                                que incluyen, toda forma tridimensional que 
+                                                sirve de tipo o patrón para la fabricación 
+                                                de un producto industrial, que le brinda de 
+                                                igual manera, una apariencia especial, sin 
+                                                que esto implique un efecto técnico.<br>
+                                                Ejemplo: La forma ergonómica de una botella 
+                                                de bebida para deportistas o la de los zapatos 
+                                                para fútbol.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                                9. ¿Qué es un Modelo de Utilidad?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse9" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Son todos aquellos objetos, 
+                                            utensilios, aparatos o herramientas que, como 
+                                            resultado de una modificación en su disposición, 
+                                            configuración, estructura o forma, presentan 
+                                            una función diferente respecto de las partes 
+                                            que lo integran o ventajas en cuanto a su utilidad.</p>
+                                            <p class="textoContenido">Los Modelos de Utilidad 
+                                            son básicamente las mejoras menores implementadas 
+                                            a productos ya existentes, y se aplica únicamente 
+                                            a productos y no a procesos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                                10. ¿Qué características debe de tener un Diseño 
+                                                Industrial o bien un Modelo de Utilidad para
+                                                poder registrarlo?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse10" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Debe de tratarse de algo 
+                                            nuevo, es decir, de creación independiente, 
+                                            y que difiera en grado significativo de diseños
+                                            conocidos o de combinaciones de características
+                                            conocidas de diseños a nivel mundial. De igual 
+                                            manera debe ser utilizado o producido para 
+                                            explotación industrial.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+                                                11. ¿Cómo es el trámite para registrar un Diseño 
+                                                Industrial o un Modelo de Utilidad y qué tiempo demora?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse11" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Son trámites básicamente
+                                            iguales a los de Patente, pero debido a que el 
+                                            Diseño Industrial implica una actividad inventiva 
+                                            menor, en promedio un trámite de Diseño Industrial 
+                                            demora un año, a partir del momento en el que se 
+                                            ingresa la solicitud a registro.</p>
+                                            <p class="textoContenido">Al tratarse de un Modelo 
+                                            de Utilidad ya que implica una actividad inventiva 
+                                            mayor a la del Diseño Industrial, demora en promedio
+                                            dos años a partir del momento en el que se ingresa 
+                                            la solicitud a registro.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+                                                12. ¿Cuál es el alcance de la protección, al 
+                                                registrar una Patente, Diseño Industrial, o un 
+                                                Modelo de Utilidad en México?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse12" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">El derecho exclusivo que 
+                                            otorga el registro es territorial, válido sólo 
+                                            para el país que lo otorga, asimismo existe la 
+                                            opción de obtener la protección a nivel internacional vía.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+                                                13. ¿Cuál es la vigencia del registro?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse13" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">La vigencia de los registros 
+                                            varía según la figura de que se trate: </p>
+                                            <ul type="disc">
+                                                <li>Patente: 20 años.</li>
+                                                <li>Modelo de Utilidad: 10 años.</li>
+                                                <li>Diseños Industriales: 15 años.</li>
+                                            </ul>
+                                            <p class="textoContenido">Los plazos empiezan a 
+                                            contar a partir de la fecha en que se solicita 
+                                            el registro ante la autoridad y una vez venecidos 
+                                            son improrrogables.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse14">
+                                                14. ¿Cómo puedo proteger una Invención en otros países?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse14" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Ingresando una primera 
+                                            solicitud de registro (en este caso, en México) 
+                                            se cuenta con un plazo de un año para solicitar 
+                                            el registro en otro país; reclamando como derecho 
+                                            de prioridad la fecha en que se ingresó esa primera 
+                                            solicitud (solicitud mexicana). El reclamo de prioridad 
+                                            se hace dentro de los primeros seis meses de ingresada 
+                                            la solicitud por primera vez.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse15">
+                                                15. ¿Por qué registrar mi invención por medio 
+                                                de MARCANDUR?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse15" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">MARCANDUR se conforma 
+                                            por un equipo de abogados y ejecutivos especialistas 
+                                            en Propiedad Intelectual. Permítenos poner a tu 
+                                            disposición nuestros conocimientos y experiencia 
+                                            para asesorarte y representarte.</p>
+                                            <p class="textoContenido">A través de nosotros 
+                                            obtendrás los resultados que buscas ahorrándote 
+                                            mucho tiempo, esfuerzo, y gastos innecesarios.
+                                            </p>
+                                            <ul type="disc">
+                                                <li>• Nuestros especialistas te dirán la 
+                                                    expectativa de éxito para lograr el 
+                                                    Registro de tu Invención antes de arriesgarte 
+                                                    a iniciar y pagar un proceso de registro 
+                                                    que no prosperará.
+                                                </li>
+                                                <li>• El equipo especializado de MARCANDUR te 
+                                                    asesorará, redactará la descripción 
+                                                    detallada de tu invención y realizará en 
+                                                    tu nombre y representación tu trámite, y 
+                                                    vigilará por ti su correcto desarrollo 
+                                                    en todo momento.</li>
+                                                <li>• Los abogados de MARCANDUR somos
+                                                    especialistas en Propiedad Intelectual 
+                                                    y Juicios de plagio. Permite que nos 
+                                                    encarguemos de representar tus intereses 
+                                                    y defender tus derechos.</li>
+                                                <li>• Puedes registrar con nosotros tu 
+                                                    Patente, Modelo de Utilidad, o tu Diseño 
+                                                    Industrial de una forma sencilla y segura 
+                                                    desde la comodidad de tu casa u oficina 
+                                                    pues nuestro servicio es online e inmediato, 
+                                                    atendemos solicitudes provenientes de 
+                                                    cualquier parte de la República Mexicana, 
+                                                    o bien del Extranjero.</li>
+                                                <li>• Cuando obtengas el registro de tu patente, 
+                                                    es altamente recomendable extender tu 
+                                                    protección al mundo. En MARCANDUR Contamos 
+                                                    con una red de especialistas asociados 
+                                                    en Estados Unidos, Canadá, Sudamérica, 
+                                                    Europa, Asia, África, y Australia.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>    
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto -->    
+        </main> 
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+        })
+    </script>
+{% endblock %}

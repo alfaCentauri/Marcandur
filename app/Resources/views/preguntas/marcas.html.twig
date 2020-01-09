@@ -1,0 +1,396 @@
+{# Plantilla de preguntas frecuentes de Marcas #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .panel-title {
+      font-size: 24px !important;
+    }
+    .menuFAQ1{
+        background-color: #ffffff !important;
+        border: 1px solid #21c2f8;
+    }
+    .menuFAQ1:hover{
+        background-color: #e3e4e6 !important;
+        border: 1px solid #e3e4e6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            {% include 'servicios/bannerMarcas.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                            {% include 'preguntas/encabezado.html.twig'%}
+                            <!-- Contenido contraible -->
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                1. ¿Qué es una marca?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">De acuerdo a la Ley de
+                                              la Propiedad Industrial una Marca es todo signo 
+                                              visible que distingue productos o servicios de 
+                                              otros de su misma especie o clase en el mercado.</p>  
+                                              <p class="textoContenido">Es decir, es toda palabra
+                                              o figura visible que por su originalidad sirva
+                                              para distinguir productos o servicios de los 
+                                              demás competidores.</p>
+                                              <p class="textoContenido">Son registrables:</p>
+                                            <ul>
+                                                <li>- Un nombre propio o comercial.</li>
+                                                <li>- Una denominación.</li>
+                                                <li>- Una figura, dise&ntilde;o, dibujo, logotipo.</li>
+                                                <li>- La combinación de una palabra y logotipo.</li>
+                                                <li>- Una frase o Aviso Comercial (slogan).</li>
+                                                <li>- Cualquier denominación comercial o razón
+                                                  social.</li>
+                                                <li>- Una botella, empaque, envoltorio, la 
+                                                      forma de un producto.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                                2. ¿Cómo se registra una Marca, un Logotipo 
+                                                o un Slogan y cuánto cuesta?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Para registrar tu Marca, 
+                                            Logotipo o Slogan necesitas seguir estos sencillos
+                                            pasos:</p>
+                                            <p class="textoContenido"><span class="textoAzul">FASE 1.</span> Realizar un Estudio de Viabilidad:</p>
+                                            <p class="textoContenido">Consiste en una investigación exhaustiva y profesional
+                                            en bases de datos de autoridades oficiales y otras privadas para saber si tu Marca,
+                                            Logotipo, o Slogan, ya han sido registrados o si hubiera algunos similares y 
+                                            confundibles con los que quieres registrar.</p>
+                                            <p class="textoContenido">Con los resultados de la Investigación, en tan solo <span class="textoAzul">24 </span>
+                                            horas te enviaremos por correo electrónico un Estudio de Viabilidad en donde por
+                                            escrito te diremos de forma clara y sencilla si pueden ser registrables y te 
+                                            anticipamos el porcentaje de éxito que tendrás en caso de iniciar el trámite.</p>
+                                            <p class="textoContenido"><span class="textoAzul">FASE 2.</span> Trámite de Registro:  </p>
+                                            <p class="textoContenido">Con base en el Estudio de Viabilidad derivado de la 
+                                            Búsqueda de Antecedentes, estaremos listos para proceder con el trámite de 
+                                            registro de tu Marca, Logotipo, o Aviso Comercial (slogan) ante el Instituto 
+                                            Mexicano de la Propiedad Industrial (IMPI) que es el único facultado para 
+                                            conceder o negar un registro.</p>
+                                            <p class="textoContenido">En MARCANDUR nos encargaremos de asesorarte, preparar,
+                                            realizar, y vigilar tu trámite de principio a fin, informándote periódicamente 
+                                            de los avances y haciéndote llegar hasta tu casa u oficina el Título de Registro 
+                                            original por mensajería especializada.</p>
+                                            <p class="textoContenido">Consulta nuestros precios, formas de pago, y 
+                                            promociones vigentes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                                3. ¿Qué es una clase?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Para su correcto tratamiento y por principio de orden, 
+                                            todos los productos y los servicios se agrupan en clases o categorías según su 
+                                            naturaleza. En México se aplica la Clasificación Internacional contenida en el 
+                                            Convenio de Niza.</p>
+                                            <p class="textoContenido">Por ejemplo:</p>
+                                            <p class="textoContenido">En la Clase 12 encontramos la fabricación de: Vehículos;
+                                            aparatos de locomoción terrestre, aérea o marítima.</p>
+                                            <p class="textoContenido">Mientras que en la Clase 35 se engloban servicios de: 
+                                            Publicidad; dirección de negocios; administración de negocios; trabajos de oficina.</p>
+                                            <p class="textoContenido">Claramente son diferentes ramos comerciales por ser 
+                                            productos o actividades totalmente distintas que no compiten entre sí.</p>
+                                            <p class="textoContenido">De tal manera que quien pretenda registrar una Marca
+                                            para fabricar automóviles, deberá solicitar el registro bajo el amparo de la
+                                            clase 12, mientras que una agencia de publicidad deberá solicitarlo para la 
+                                            clase 35.</p>  
+                                            <p class="textoContenido">Es necesario obtener un registro de Marca o Aviso 
+                                            Comercial para cada clase.</p>
+                                            <p class="textoContenido">La clasificación es útil debido a que se presume 
+                                            que puede existir la misma Marca o Aviso Comercial (slogan) en clases distintas
+                                            aplicadas para actividades comerciales sustancialmente diversas, puesto que no 
+                                            representan competencia entre sí al dirigirse públicos consumidores diferentes 
+                                            y pueden coexistir pacíficamente en el mercado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                                4. ¿Qué ventajas obtengo al registrar mi Marca?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Cualquier persona tiene derecho a usar libremente 
+                                                una palabra o figura para distinguir sus productos o servicios, sin 
+                                                embargo; sólo quien tenga el Título de Registro podrá reclamar el uso
+                                                exclusivo de una Marca. Con ello nadie más puede usar o incluso imitar
+                                                una Marca Registrada, evitando enga&ntilde;ar al público consumidor aprovechándose 
+                                                del prestigio de otra persona o empresa.</p>
+                                            <p class="textoContenido">Algunas de las principales ventajas son:</p>
+                                            <ol type="a">
+                                                <li>- Al tener tu Marca, Registrada nadie más podrá usarla, copiarla, o imitarla.</li>
+                                                <li>- Tienes el derecho de utilizar el símbolo ® o M.R. junto a tu Marca.</li>
+                                                <li>- Tu negocio adquiere mayor prestigio al enviar un claro mensaje a tus 
+                                                    clientes de seriedad y profesionalismo por tener tu Marca Registrada.</li>
+                                                <li>- La Marca por sí sola empezará a adquirir valor económico con base al
+                                                    prestigio y la publicidad que le procures. Esto te ayudará a poder 
+                                                    licenciar su uso o cederla a cambio de un pago si así lo deseas.</li>
+                                                <li>- Una Marca Registrada es el estandarte de tu actividad comercial.
+                                                    Con ella podrás posicionarte mejor en la mente y preferencia de tus
+                                                    clientes.</li>
+                                                <li>- Una Marca Registrada bien posicionada es un elemento importantísimo en
+                                                    negociaciones de franquicias o cesión de derechos. A menudo una marca 
+                                                    vale más que los activos fijos de una empresa.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                                5. ¿Por qué registrar mi Marca por medio de MARCANDUR?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse5" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">MARCANDUR se conforma por un equipo de abogados y 
+                                            ejecutivos especialistas en Propiedad Intelectual. Permítenos poner a tu 
+                                            disposición nuestros conocimientos y experiencia para asesorarte y representarte. </p>
+                                            <p class="textoContenido">A través de nosotros obtendrás los resultados que buscas 
+                                            ahorrándote mucho tiempo, esfuerzo, y gastos innecesarios.</p>                                                
+                                            <ol type="a">
+                                                <li>- Nuestros especialistas te dirán la expectativa de éxito para lograr el 
+                                                    Registro de tu Marca antes de arriesgarte a iniciar y pagar un proceso de 
+                                                    registro que no prosperará.</li>
+                                                <li>- El equipo especializado de MARCANDUR te asesorará, realizará en tu nombre
+                                                    y representación tu trámite, y vigilará por ti su correcto desarrollo en 
+                                                    todo momento.</li>
+                                                <li>- Los abogados de MARCANDUR somos especialistas en Propiedad Intelectual y
+                                                    Juicios para defender tus derechos. Permite que nos encarguemos de 
+                                                    representar tus intereses.</li>
+                                                <li>- Puedes registrar con nosotros tu Marca o Aviso Comercial (slogan) de una
+                                                    forma sencilla y segura desde la comodidad de tu casa u oficina pues nuestro
+                                                    servicio es online e inmediato, atendemos solicitudes provenientes de 
+                                                    cualquier parte de la República Mexicana, o bien del Extranjero.</li>
+                                            </ol>
+                                            <p class="textoContenido">Confía en nosotros y deja todo en nuestras manos.</p>
+                                            <p class="textoContenido">Somos especialistas en Propiedad Intelectual.</p>                                                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                                6. ¿Por qué necesito asesoría profesional especializada?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse6" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">El éxito del registro de tu Marca o Aviso Comercial (slogan)
+                                            radica principalmente en la correcta asesoría que recibas previamente a iniciar el
+                                            proceso. </p>
+                                            <p class="textoContenido">El 80% de los registros solicitados que se pierden, son debido
+                                            a que se abandonaron o se realizaron incorrectamente por simples gestores o personas 
+                                            inexpertas.</p>
+                                            <p class="textoContenido">La asesoría profesional especializada te ofrece como beneficios:</p>
+                                            <p class="textoContenido">1. Saber con anticipación las probabilidades que tiene tu Marca o 
+                                            Aviso Comercial (slogan) de obtener su Título de Registro, puesto que el pago de derechos 
+                                            federales que cobra la autoridad correspondiente por el estudio de tu solicitud, NO ES 
+                                            REEMBOLSABLE sin importar si al final logras o no registrar tu Marca.</p>
+                                            <p class="textoContenido">Una denominación o logotipo que no sea suficientemente original y 
+                                            distintivo no logrará convertirse en Marca Registrada.</p>
+                                            <p class="textoContenido">Nuestros especialistas te dirán la expectativa de éxito de tu 
+                                            Marca antes de que te arriesgues a iniciar y pagar un proceso que no prosperará.</p>
+                                            <p class="textoContenido">2. Muchos procesos presentados por personas inexpertas o incluso 
+                                                gestores, se pierden por no haber sido presentados en tiempo y forma conforme a la Ley 
+                                                de la Propiedad Industrial. </p>
+                                            <p class="textoContenido">El equipo especializado de MARCANDUR te asesorará y vigilará tu
+                                            trámite en todo momento.</p>
+                                            <p class="textoContenido">3. Por si fuera poco muchos solicitantes abandonan sus trámites
+                                            y desperdician su dinero, al no saber cómo proceder en caso de que la autoridad les requiera 
+                                            una contestación en términos legales para la cual existe una fecha de término improrrogable.</p>
+                                            <p class="textoContenido">Los abogados de MARCANDUR somos especialistas en Propiedad Intelectual 
+                                            y Juicios de Nulidad. Permite que nos encarguemos de representar tus intereses y defender tus derechos.</p>
+                                            <p class="textoContenido">Permítenos representarte y hacer nuestra labor profesional en la que somos expertos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                                7. ¿Por cuánto tiempo está vigente el registro de una Marca o aviso comercial (slogan)?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse7" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">El registro de Marca o Aviso Comercial (slogan) ¡tiene una vigencia de 10 a&ntilde;os!
+                                            que pueden ser prorrogables por periodos iguales, las veces que quieras mientras no dejes de usarla.</p>
+                                            <p class="textoContenido">Es válido en la totalidad del territorio nacional, por lo que alguien en 
+                                            Monterrey no puede usar una Marca Registrada incluso si sólo se usa en la Ciudad de México.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                                8. ¿Qué diferencia hay entre una Marca y un slogan o Aviso Comercial (slogan)?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse8" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">La Ley de la Propiedad Industrial da el mismo tratamiento de registro a las
+                                            Marcas y los Avisos Comerciales (slogan), por lo que en este sitio Web todas las referencias a Marcas 
+                                            aplican también para los Avisos Comerciales (slogan).</p>
+                                            <p class="textoContenido">Una Marca se conforma por una palabra o un conjunto breve de palabras, un 
+                                            logotipo, o por la combinación de ambos.</p>
+                                            <p class="textoContenido">Un Aviso Comercial (llamado Slogan en mercadotecnia y publicidad), es una
+                                            frase publicitaria que sirve para que tus clientes recuerden más fácilmente tu Marca.</p>
+                                            <p class="textoContenido">Un claro ejemplo de Marca mixta y Aviso Comercial es el siguiente:</p>
+                                            <div class="row">
+                                                <div class="col-lg-5 col-md-5 col-sm-5">                                                        
+                                                </div>
+                                                <div class="col-lg-2  col-md-2 col-sm-2">  
+                                                    <img src="{{asset('bundles/app/img/logo-bimbo.jpg')}}" class="img-thumbnail" alt="Logo Bimbo"/>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5">                                                        
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-5 col-md-5 col-sm-5">                                                        
+                                                </div>
+                                                <div class="col-lg-2  col-md-2 col-sm-2">  
+                                                    <p class="textoContenido">BIMBO</p>
+                                                    <p class="textoContenido">Con el cari&ntilde;o de siempre</p>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5">                                                        
+                                                </div>
+                                            </div>
+                                            <p class="textoContenido">En este conjunto la Marca es "BIMBO" y se complementa con el logotipo que
+                                            es la figura de un oso con un gorro de cocinero, conformando una Marca mixta.</p> 
+                                            <p class="textoContenido">La frase "Con el cari&ntilde;o de siempre" es un Aviso Comercial (slogan)
+                                            y tiene como objetivo que el consumidor recuerde la Marca asociando ideas de cari&ntilde;o cotidiano con 
+                                            el producto en cuestión, que es panadería.</p>
+                                            <p class="textoContenido">En un caso así se debe registrar por un lado la Marca y por el otro 
+                                            el Aviso Comercial, pues por ley, son independientes.</p>
+                                            <p class="textoContenido">*** La marca BIMBO, su logotipo, y el Aviso Comercial "Con el cari&ntilde;o
+                                            de siempre" son propiedad de sus legítimos titulares y se usa en este texto única y exclusivamente 
+                                            como ejemplo de la conformación de una marca para fines didácticos y meramente explicativos sin 
+                                            afán alguno de lucro.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                                9. ¿Cuánto tiempo tarda el proceso de registro?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse9" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">En sólo 24 horas recibirás en tu correo electrónico el Estudio de Viabilidad
+                                            que realizaremos para ti.</p>
+                                            <p class="textoContenido">Partiendo de los resultados obtenidos y de la expectativa de éxito dictaminada,
+                                            dentro de las 48 horas hábiles siguientes, prepararemos y presentaremos la Solicitud de Registro de tu 
+                                            Marca o Aviso Comercial ante el Instituto Mexicano de la Propiedad Industrial (IMPI), es importante 
+                                            mencionar que a partir de ese momento una Marca o Aviso Comercial ya cuenta con la protección que la 
+                                            ley otorga.</p>
+                                            <p class="textoContenido">Realizado lo anterior, de manera permanente estaremos monitoreando tu trámite
+                                            y te mantendremos informando en todo momento sobre su desarrollo o eventos relevantes.</p>
+                                            <p class="textoContenido">La autoridad puede tardar aproximadamente 90 días para emitir un primer oficio
+                                            en caso de observar un impedimento legal, al cual le daremos legal contestación, en cuyo caso el proceso 
+                                            puede tomar algunos meses más, dependiendo de la rapidez con que lo resuelva el Instituto Mexicano de la 
+                                            Propiedad Industrial (IMPI).</p>
+                                            <p class="textoContenido">Si dicho oficio no es emitido, significa que no existe impedimento alguno para
+                                            obtener tu registro y se expedirá tu Título de Registro en aproximadamente otros 90 a 120 días más.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                                10. He usado mi Marca por mucho tiempo y nunca he tenido problema ¿es necesario que la registre?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse10" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p class="textoContenido">Es altamente recomendable concretar el esfuerzo de posicionar una Marca obteniendo
+                                           su registro y reclamando el legítimo derecho de uso exclusivo.</p>
+                                            <p class="textoContenido">El uso de una Marca es el primer requisito para reclamar su exclusividad y evitar 
+                                            que otras personas la copien o la imiten.</p>
+                                            <p class="textoContenido">Si has usado tu Marca de forma cotidiana, significa que ya cuenta con un prestigio
+                                            y una imagen reconocida por tus clientes ¡NO DEJES QUE OPORTUNISTAS LA FALSIFIQUEN, LA IMITEN, O LA REGISTREN
+                                            ANTES QUE TÚ!, aprovechándose de tu calidad y esfuerzo.</p>
+                                            <p class="textoContenido">Por otro lado, el uso de una Marca sin registro implica el riesgo de que sin saberlo
+                                            estás violentando el derecho de un tercero, lo cual representa un serio problema potencial que podría resultar
+                                            en cuantiosas pérdidas económicas para tu negocio si resultas demandado.</p>
+                                            <p class="textoContenido">Permítenos asesorarte para definir la mejor estrategia legal para ti.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>         
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto -->    
+        </main> 
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+        })
+    </script>
+{% endblock %}
+{# empty Twig template #}

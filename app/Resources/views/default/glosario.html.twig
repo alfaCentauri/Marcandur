@@ -1,0 +1,48 @@
+{# Plantilla de glosario de términos legales #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main>  
+            <section class="well7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            En espera del contenido
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto -->  
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

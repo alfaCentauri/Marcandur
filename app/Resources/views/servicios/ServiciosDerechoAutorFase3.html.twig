@@ -1,0 +1,73 @@
+{# Plantilla de servicios de derechos de autor Fase 2 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerDerechosAutor.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 3: EMISI&Oacute;N Y ENV&Iacute;O DEL CERTIFICADO DE REGISTRO
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="">Aproximadamente 20 días h&aacute;biles, te haremos 
+                            llegar hasta tu casa u oficina el certificado 
+                            de Registro de Obra, original por mensajeria
+                            especializada, juntos con los ejemplares de 
+                            la Obra que nos enviaste, sellado estampado 
+                            por la autoridad.
+                            </p>                            
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioDerechosAutor') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

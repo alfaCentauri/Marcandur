@@ -1,0 +1,152 @@
+{# Plantilla para la asesoria legal #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .fondoNosotros{
+        background-image: url("{{ asset('bundles/app/img/marcandur_nosotros_0000_quienes--somos.png')}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 540px;
+    }
+
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+    <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerAsesoriaLegal.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h3 class="TituloPrecios">
+                                ADEM&Aacute;S DE LA PROPIEDAD INTELECTUAL
+                            </h3>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h4 class="text-justify">
+                                SOMOS ABOGADOS ESPECIALISTAS EN LAS SIGUIENTES &Aacute;REAS:
+                            </h4>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h5>
+                                    CIVIL
+                                </h5>
+                                <p class="texto textoNosotros">(Contratos, Escrituras, 
+                                bienes inmuebles, etc)
+                                </p>
+                                <h5>
+                                    FAMILIAR
+                                </h5>
+                                <p class="texto textoNosotros">(Divorcios, testamentos, 
+                                adopciones, correci&oacute;n de actas, etc)
+                                </p>
+                                <h5>
+                                    MERCANTIL
+                                </h5>
+                                <p class="texto textoNosotros">(Pagarés, Cheques, 
+                                letras de cambio, constitución de empresas, etc)
+                                </p>
+                                <h5>
+                                    LABORAL
+                                </h5>
+                                <p class="texto textoNosotros">(Asuntos entre 
+                                patrones y trabajadores, AFORES)
+                                </p>
+                                <h5>
+                                    FISCALES
+                                </h5>
+                                <p class="texto textoNosotros">(Impuestos, Hacienda,
+                                IMSS, INFONAVIT)
+                                </p>
+                                <h5>
+                                    ADMINISTRATIVO
+                                </h5>
+                                <p class="texto textoNosotros">(Asuntos 
+                                relacionados con las autoridades locales o federales)
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h5>
+                                    Amparo
+                                </h5>
+                                <p class="texto textoNosotros">(Protecci&oacute;n 
+                                mediante juicio de amparo)
+                                </p>
+                                <h5>
+                                    AGUAS NACIONALES
+                                </h5>
+                                <p class="texto textoNosotros">(Permisos, multas,
+                                inspecciones de autoridades)
+                                </p>
+                                <h5>
+                                    MIGRATORIO Y ADUANERO
+                                </h5>
+                                <p class="texto textoNosotros">(Asuntos de 
+                                extranjeros en M&eacute;xico o Comercio Exterior)
+                                </p>
+                                <h5>
+                                    CORPORATIVO
+                                </h5>
+                                <p class="texto textoNosotros">(Todo lo 
+                                relacionado con empresas)
+                                </p>
+                                <h5>
+                                    FINANCIERO Y BURSATIL
+                                </h5>
+                                <p class="texto textoNosotros">(Impuestos, Hacienda,
+                                IMSS, INFONAVIT)
+                                </p>
+                                <h5>
+                                    VARIAS
+                                </h5>
+                                <p class="texto textoNosotros">(Estudiaremos tu 
+                                caso y te asesoraremos profesionalmente)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>                    
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <section class="well well1">
+                {% include 'default/seccionServicios.html.twig' %}
+            </section>
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            sessionStorage.clear();
+        })
+    </script>
+{% endblock %}

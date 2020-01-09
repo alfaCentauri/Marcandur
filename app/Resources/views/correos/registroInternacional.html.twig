@@ -1,0 +1,28 @@
+{# Mensaje de correo para la solicitud del formulario de Registro Internacional #}
+<H1>DATOS DE CONTACTO: </H1>
+<p>Nombre completo: {{marcaInternacional.contacto.nombre|e}}</p>
+<p>E-mail: {{marcaInternacional.contacto.correo|e}}</p> 
+<p>Tel&eacute;fono fijo: {{marcaInternacional.contacto.telefono|e}}</p>
+<p>Tel&eacute;fono celular: {{marcaInternacional.contacto.telefonoMovil|e}}</p>
+<H2>DATOS DE LA MARCA A REGISTRAR</H2>
+<p>Pa&iacute;s para registrar su marca: {{ marcaInternacional.pais|e }}</p>
+<p>¿Cuenta con registro en México?
+    {% if marcaInternacional.registraAnterior == 'Si' %}
+        Si
+    {% else %}
+        No
+    {% endif %}
+</p>                    
+<p>Nombre o Denominaci&oacute;n de la marca a registrar {{ marcaInternacional.nombre|e }}</p>
+<p>¿Su marca tiene logotipo?
+    {% if marcaInternacional.tieneLogotipo == 'Si' %}
+        Si
+    {% else %}
+        No
+    {% endif %}
+</p>
+<p>Comentarios {{ marcaInternacional.comentarios|e }}</p>
+
+<p>Correo emitido de la sección de Servicios de Marcas Internacionales. 
+    URL: http://marcandur.com.mx/Registro-De-Marcas-Internacional.html
+</p>

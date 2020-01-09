@@ -1,0 +1,168 @@
+{# Plantilla para mostrar informaci&oacute;n sobre el IMPI #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            {% include 'servicios/bannerIMPI.html.twig' %}
+            <!-- Fin Banner -->
+            <section class="well1"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h4>
+                                ¿PROBLEMAS CON EL IMPI?                                   
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <p class="textoContenido">Si tienes una demanda ante 
+                            el IMPI. Si deseas entablar un juicio contra alguien
+                            que est&aacute; violando tus derechos de Marca o Invenci&oacute;n, 
+                            solicita asesoría especializada hoy mismo.                      
+                            </p>
+                            <p class="textoContenido">MARCANDUR® pone a tu disposici&oacute;n
+                            un equipo de Licenciados en Derecho trilingües y 
+                            especializados en Propiedad Intelectual.                                
+                            </p>
+                            <p class="textoContenido">Permítenos defender tu leg&iacute;timo 
+                            derecho apoyados en nuestro c&oacute;digo de &eacute;tica, experiencia,
+                            y profesionalismo.</p>
+                            <p class="textoContenido">
+                                <span class="textoAzul">¡Nuestra Asesoría es Gratuita y Confidencial!</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h4>ASESORÍA O REPRESENTACIÓN LEGAL PARA ANTENDER UN PROCESO
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <p class="textoContenido">
+                            <span class="textoAzul">Demandas y Juicios ante el IMPI</span>
+                            </p>
+                            <p class="textoContenido">Si has recibido una carta 
+                            o una demanda por el uso de una Marca o Patente.</p>
+                            <p class="textoContenido">Si alguien est&aacute; copiando 
+                            tu Marca o violando tus Derechos Intelectuales.</p>
+                            <p class="textoContenido">Considera que una demanda 
+                            implica un riesgo potencial de pagar una multa muy 
+                            alta o de clausura del negocio. Si eres demandado o 
+                            víctima de falsificaci&oacute;n de marca, ases&oacute;rate con 
+                            nosotros. Somos <span class="textoAzul">Abogados 
+                            Especializados</span>.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                          <div class="col-lg-4 col-md-4 col-sm-12">
+                              <a href="{{ path('formularioIMPI') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                          </div>  
+                        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h4>TRÁMITES EN PROCESOS</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <p class="textoContenido">
+                            <span class="textoAzul">Requerimientos del IMPI</span>
+                            </p>
+                            <p class="textoContenido">
+                            Si tienes una Marca o Patente en proceso de registro 
+                            y te lleg&oacute; un requerimiento del IMPI, con un impedimento 
+                            legal, o una cita de anterioridades    
+                            </p>
+                            <p class="textoContenido">
+                            Recuerda que un oficio requiere una contestaci&oacute;n en 
+                            t&eacute;rminos legales por un Abogado Especialista. Deja 
+                            en nuestras manos tu asunto y permítenos representarte.   
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                          <div class="col-lg-4 col-md-4 col-sm-12">
+                              <a href="{{ path('formularioIMPI2') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                          </div>  
+                        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Otros servicios -->
+            {% include 'servicios/otrosServicios.html.twig' %}
+            <!-- Fin Otros servicios -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            sessionStorage.clear();
+        })
+    </script>
+{% endblock %}

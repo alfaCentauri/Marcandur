@@ -1,0 +1,251 @@
+{# Plantilla de servicios de Registro de marcas #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .btn-primary span:before {
+        position: absolute;
+        font-size: 32px !important;
+        left: -13px;
+        top: 8px !important;
+      }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            {% include 'servicios/bannerMarcas.html.twig' %}
+            <!-- Fin Banner -->
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">¡Garantiza la preferencia y el
+                            reconocimiento de tus consumidores! Registra hoy 
+                            mismo tu Marca, Logotipo y Slogan, que identifican 
+                            a tus productos o servicios de los de tu competencia.
+                            </p>
+                            <p class="textoContenido">Obtén tu Registro de Marca por medio
+                            de nosotros en</p>
+                            <p class="textoContenido">3 sencillas Fases, desde la comodidad 
+                            de tu casa u oficina con rapidez, seguridad, y 
+                            absoluta confidencialidad.</p>                                    
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-4 col-md-3 col-sm-12"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>                                      
+                </div>        
+            </section><!-- Fin Texto -->
+            <section class="well well2"><!-- Fases -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h2>
+                                FASES
+                            </h2>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-8"><!-- Fase 1 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_Estudio-de-Viabilidad.png')}}"
+                                             class="img-responsive" alt="Estudio de Viabilidad"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 1</p>
+                                        <p class="textoTituloFase4">Estudio de viabilidad</p>
+                                        <p class="textoTituloFase4">¡En tansolo 24 horas!</p>
+                                        <br>
+                                        <p class="textoTituloFase3">$550.00 IVA incluido</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFase1">
+                                            <p class="textoFase">Realizaremos para ti 
+                                            una Investigación Profesional mediante 
+                                            la cual te haremos saber si tu Marca y/o 
+                                            Aviso Comercial (slogan) cumplen con los 
+                                            requisitos de ley y están disponibles 
+                                            para ser registrados.</p>
+                                            <p class="textoFase">Recibirás en tu correo 
+                                            electrónico tu Estudio de Viabilidad por 
+                                            escrito.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosMarcasFase1')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div> <!-- Fin Fase 1 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 2 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_Registro-de-Marca,-Logotipo-o-slogan.png')}}"
+                                             class="img-responsive" alt="Registro"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 2</p>
+                                        <p class="textoTituloFase4">Registro de Marca, Logotipo o Slogan</p>
+                                        <p class="textoTituloFase4">Marca (incluye logotipo)</p>
+                                        <p class="textoTituloFase3">$6,565.00 IVA incluido</p>
+                                        <p class="textoTituloFase3">Slogan $6,565.00 IVA incluido</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFase2">
+                                            <p class="textoFase">Partiendo de los 
+                                            resultados obtenidos en la FASE 1 procederemos 
+                                            a la FASE 2 que consiste en la Presentación 
+                                            a Registro de tu Marca o Aviso Comercial 
+                                            (slogan).
+                                            </p>
+                                            <p class="textoFase">Concluida la FASE 2 
+                                            te enviaremos de inmediato una copia 
+                                            electrónica del documento oficial que 
+                                            compruebe que el proceso de registro ha
+                                            iniciado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosMarcasFase2')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div>   <!-- Fin Fase 2 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 3-->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_0000.png')}}"
+                                             class="img-responsive" alt="Certificado de registro"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 3</p>
+                                        <p class="textoTituloFase4">Monitoreo durante el proceso de registro yTitulación</p>
+                                        <p class="textoTituloFase3">Sin costo alguno</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFase3">
+                                            <p class="textoFase">Como expertos en Propiedad 
+                                            Intelectual vigilaremos puntualmente todo 
+                                            proceso de registro hasta su conclusi&oacute;n, 
+                                            envi&aacute;ndote reportes peri&oacute;dicos 
+                                            sobre los avances.</p>
+                                            <p class="textoFase">Una vez concedido tu 
+                                            T&iacute;tulo de Registro, te lo haremos llegar 
+                                            hasta tu domicilio por mensajer&iacute;a especializada,
+                                            sin costo para el D.F. y área metropolitana.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosMarcasFase3')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div><!-- Fin Fase 3 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="{{ path('formularioMarca') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Fases -->
+            <!-- Otros servicios -->
+            {% include 'servicios/otrosServicios2.html.twig' %}
+            <!-- Fin Otros servicios -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto -->  
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

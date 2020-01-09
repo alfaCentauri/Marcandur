@@ -1,0 +1,41 @@
+{# Plantilla para el encabezado de la página de preguntas #}
+<H1 class="tituloFAQ">
+    PREGUNTAS FRECUENTES (FAQ)
+    </H1>
+    <p class="textoContenido">
+    Revisa el tema que te interesa
+    </p>
+    <div class="navbar-header">
+        <!-- Mobile Navigation -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation" style="padding-right: 0px">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="menuFAQ1" id="menuFAQ1">
+                <a href="{{path('PreguntasFrecuentesMarcas')}}">MARCAS</a>
+            </li>
+            <li class="menuFAQ2" id="menuFAQ2">
+                <a href="{{path('PreguntasFrecuentesInvenciones')}}">INVENCIONES</a>
+            </li>
+            <li class="menuFAQ3" id="menuFAQ3">
+                <a href="">REGISTRO DE OBRA</a>
+            </li>
+            <li class="menuFAQ4" id="menuFAQ4">
+                <a href="">RESERVA DE DERECHOS</a>
+            </li>
+            <li class="menuFAQ5" id="menuFAQ5">
+                <a href="">ISBN</a>
+            </li>
+            <li class="menuFAQ6" id="menuFAQ6">
+                <a href="">ISSN</a>
+            </li>
+            <li class="menuFAQ7" id="menuFAQ7">
+                <a href="">CERTIFICADOS DE LICITUD</a>
+            </li>
+        </ul>
+    </nav>

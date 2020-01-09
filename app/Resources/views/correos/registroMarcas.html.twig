@@ -1,0 +1,50 @@
+{# Mensaje del correo de la solicitud del registro de marcas #}
+<h1>Datos de Contacto:</h1>
+<p>Nombre completo: {{ marca.contacto.nombre|e }}.</p>
+<p>E-mail: {{ marca.contacto.correo|e }}.</p>
+<p>Teléfono fijo: {{ marca.contacto.telefono|e }}.</p>
+<p>Teléfono celular: {{ marca.contacto.telefonoMovil|e }}.</p>
+<H2>DATOS DE LA MARCA A REGISTRAR</H2>
+<p>Nombre o denominación de la marca a registrar: {{ marca.nombre|e }}.</p>
+<p>¿Cuenta con Logotipo?
+{% if marca.tieneLogotipo == 'Si' %}
+    Si
+{% else %}
+    No
+{% endif %}
+</p>                    
+<p>Productos o servicios que ampara o amparará la marca: {{ marca.productos|e }}.</p>
+<p>¿La ha utilizado anteriormente?
+{% if marca.utilizado == 'Si' %}
+    Si, desde la fecha: {{ marca.fecha|e }}.
+{% else %}
+    No
+{% endif %}
+</p>
+<p>Comentarios: {{ marca.comentarios|e }}.</p>
+<h2>DATOS DEL TITULAR DE LA MARCA</h2>
+<p>Nombre completo: {{ marca.nombreTitular|e }}.</p>
+<p>Nombre del Representante Legal: {{ marca.nombreRepresentante|e }}.</p>
+<p>Nacionalidad: {{ marca.nacionalidad|e }}.</p>
+<h2>Domicilio</h2>
+<p>Calle o Avenida: {{ marca.domicilio.calle|e }}.</p>
+<p>Número: {{ marca.domicilio.numero|e }}.</p>
+<p>Municipio o delegación: {{ marca.domicilio.municipio|e }}.</p>
+<p>Ciudad o Población: {{ marca.domicilio.ciudad|e }}.</p>
+<p>Estado: {{ marca.domicilio.estado|e }}.</p>
+<p>País: {{ marca.domicilio.pais|e }}.</p>
+<p>Código postal: {{ marca.domicilio.codigoPostal|e }}.</p>
+<h2>OTROS DATOS DE CONTACTO TELÉFONOS Y CORREO ELECTRONICO</h2>
+<p>Teléfono Domicilio: {{ marca.OtrosContactos.telefonoDomicilio|e }}.</p>
+<p>Teléfono Oficina: {{ marca.OtrosContactos.telefonoOficina|e }}.</p>
+<p>Teléfono Móvil: {{ marca.OtrosContactos.telefonoMovil|e }}.</p>
+<p>Fax: {{ marca.OtrosContactos.fax|e }}.</p>
+<p>E-mail: {{ marca.OtrosContactos.correo|e }}.</p>
+<h2>DATOS DE FACTURACION</h2>
+<p>Nombre Completo o razón social: {{ marca.factura.razonSocial|e }}.</p>
+<p>RFC: {{ marca.factura.RFC|e }}.</p>
+<p>Domicilio Fiscal completo: {{ marca.factura.domicilio|e }}.</p>
+<p>Código Postal: {{ marca.factura.codigoPostal|e }}.</p>
+
+<p>Correo emitido de la sección de Servicios de Marcas. URL: http://marcandur.com.mx/marcas.html 
+</p>

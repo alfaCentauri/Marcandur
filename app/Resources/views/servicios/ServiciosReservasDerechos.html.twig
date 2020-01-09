@@ -1,0 +1,244 @@
+{# Plantilla de la vista de servicios de derechos #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .btn-primary span:before {
+        position: absolute;
+        font-size: 32px !important;
+        left: -13px;
+        top: 8px !important;
+      }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main>  
+            {% include 'servicios/bannerReservaDerechos.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase">
+                            <p class="textoContenido">Obt&eacute;n el derecho de <span class="textoAzul">
+                            Exclusividad</span> sobre el nombre de una 
+                            <span class="textoAzul">Publicaci&oacute;n</span> o 
+                            <span class="textoAzul">Difusi&oacute;n peri&oacute;dica;</span> 
+                            de un nombre o grupo art&iacute;stico, personaje ficticio
+                            o de caracterizaci&oacute;n, as&iacute; como de los elementos 
+                            originales de una promoci&oacute;n publicitaria.
+                            </p>
+                            <p class="textoContenido">Obt&eacute;n tu Registro de Marca por medio
+                                de nosotros en <span class="textoAzul">3 sencillas Fases</span>, desde la comodidad 
+                            de tu casa u oficina con <span class="textoAzul">rapidez, seguridad, y 
+                                absoluta confidencialidad.</span></p>                                  
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3">                                        
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>                                  
+                </div>        
+            </section><!-- Fin Texto -->
+            <section class="well well2"><!-- Fases -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h2>
+                                FASES
+                            </h2>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-8"><!-- Fase 1 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_0003_Dictamen-Previo.png')}}"
+                                            class="img-responsive" alt="Tramite"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 1</p>
+                                        <p class="textoTituloFase4">Dictamen Previo</p>
+                                        <p class="textoTituloFase4">(Búsqueda de Antecedentes)</p>
+                                        <br>
+                                        <p class="textoTituloFase3">$1,185.00 IVA incluido</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFaseRD1">
+                                            <p class="textoFase">El Dictamen Previo 
+                                            consiste en una investigaci&oacute;n exhaustiva 
+                                            y profesional que nos permitirá descartar 
+                                            la existencia de algún impedimento legal 
+                                            para obtener la Reserva de Derechos en 
+                                            tu nombre y representaci&oacute;n.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosReservaDerechosFase1')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div> <!-- Fin Fase 1 -->                            
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 2 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_0002_Tramite-de-la-Reserva-de-Derechos-al-Uso-Exclusivo.png')}}"
+                                            class="img-responsive" alt="Dictamen Previo"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 2</p>
+                                        <p class="textoTituloFase4">Trámite de la 
+                                        Reserva de Derechos al Uso Exclusivo</p>
+                                        <br>
+                                        <p class="textoTituloFase3">$4,850.00 IVA incluido </p>
+                                        <p class="textoTituloFase4">Publicaciones y Difusiones Peri&oacute;dicas</p>
+                                        <p class="textoTituloFase3">$6,652.00 IVA incluido </p>
+                                        <p class="textoTituloFase4">Nombres Art&iacute;sticos o de Personajes</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFaseRD2">
+                                            <p class="textoFase">En caso de que el 
+                                            resultado del Dictamen Previo sea favorable,
+                                            procederemos a la obtenci&oacute;n de tu Reserva 
+                                            de Derechos ante la autoridad 
+                                            correspondiente.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosReservaDerechosFase2')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div><!-- Fin Fase 2 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 3-->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_Emision-y-envio-de-Certificado-de-Registro.png')}}"
+                                             class="img-responsive" alt="Certificado de registro"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 3</p>
+                                        <p class="textoTituloFase4">Monitoreo durante el proceso de registro yTitulaci&oacute;n</p>
+                                        <p class="textoTituloFase3">Sin costo alguno</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFaseRD3">
+                                            <p class="textoFase">Al t&eacute;rmino de 20 d&iacute;as
+                                            hábiles aproximadamente, te haremos llegar
+                                            hasta tu casa u oficina el Certificado de 
+                                            Reserva de Derechos original por mensajer&iacute;a
+                                            especializada sellado y estampado por la 
+                                            autoridad. (Env&iacute;o a domicilio sin costo 
+                                            en el D.F. y Área Metropolitana).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <a href="{{path('ServiciosReservaDerechosFase3')}}" class="btn btn-block btn-primary text-center botonMas">M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span></a>
+                                    </div>
+                                </div>
+                            </div><!-- Fin Fase 3 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                    </div>  
+                    <div class="row"><!-- Boton para la solicitud -->
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a href="{{ path('formularioReservaDerechos')}}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                            </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div><!-- Fin de Boton para la solicitud -->                
+                </div>        
+            </section><!-- Fin Fases -->
+            <!-- Otros servicios -->
+            {% include 'servicios/otrosServicios4.html.twig' %}
+            <!-- Fin Otros servicios -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

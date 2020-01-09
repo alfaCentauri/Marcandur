@@ -1,0 +1,125 @@
+{# Plantilla de servicios de Marcas Fase 1 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerMarcas.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 1: ESTUDIO DE VIABILIDAD
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">Este es el primer paso para registrar tu <span class="textoAzul">Marca</span>,
+                                Logo, o <span class="textoAzul">Aviso Comercial</span> (slogan).                                    
+                            </p>
+                            <p class="textoContenido">La
+                            <span class="textoAzul"> Búsqueda de Antecedentes</span> es la investigación
+                            profesional y exhaustiva que nuestros especialistas
+                            realizarán respecto de tu <span class="textoAzul">Marca</span> o <span class="textoAzul">Aviso Comercial</span> 
+                            (slogan).</p>
+                            <p class="textoContenido">El resultado es de suma importancia, ya que nos 
+                            permitirá prepararte un <span class="textoAzul">Estudio de Viabilidad</span> que 
+                            te dirá:                                    
+                            </p> 
+                            <ol type="1" class="textoContenido">
+                                <li>1.Si tu Marca o Aviso Comercial (slogan) se 
+                                    encuentra libre o disponible para ser 
+                                    registrado.</li>
+                                <li>2.Si cumple con los requisitos que establece
+                                    la Ley para conceder su registro.</li>
+                                <li>3.Las estrategias de registro que se habrán 
+                                    de implementar para lograr un registro 
+                                    exitoso.</li>
+                                <li>4.Te daremos un pronóstico con las probabilidades 
+                                    de éxito que tendrías para obtener tu 
+                                    registro, si decides iniciar el proceso.</li>
+                            </ol>
+                            <p class="textoContenido">En tan sólo 24 horas recibirás por correo electrónico
+                            el <span class="textoAzul">Estudio de Viabilidad</span> mediante el cual te explicamos
+                            de forma clara y sencilla el resultado de la <span class="textoAzul">Búsqueda 
+                            de Antecedentes</span>.</p>
+                            <p class="textoContenido">El precio total de este servicio por cada <span class="textoAzul">clase</span> 
+                            es de $550.00, IVA incluido.</p>
+                            <p class="textoContenido">¿Quieres saber más? Puedes descargar el siguiente 
+                            documento (Formato PDF).</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a href="#">
+                                    <img src="{{ asset('bundles/app/img/icono-PDF.png')}}" alt="icono-PDF" class="img-responsive imagenPDF"/>
+                                </a>
+                            </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p class="textoInfor">Para solicitar tu Búsqueda de Antecedentes 
+                                      y tu Estudio de Viabilidad haz clic en el 
+                                      siguiente botón:</p>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioMarca') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

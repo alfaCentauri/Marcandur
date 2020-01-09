@@ -1,0 +1,175 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+home:
+    path: /
+    defaults: { _controller: AppBundle:Default:index }
+nosotros:
+    path: /Nosotros.html
+    defaults: { _controller: AppBundle:Default:nosotros }
+#
+#Contacto
+#
+contacto2:
+    path: /Contacto2.html
+    defaults: { _controller: AppBundle:Default:contacto }
+correo:
+    path: /Mensaje
+    defaults: { _controller: AppBundle:Formularios:enviarMensaje }
+contacto:
+    path: /Contacto.html
+    defaults: { _controller: AppBundle:Formularios:contacto }
+#
+#Buscador
+#
+buscar:
+    path: /buscar
+    defaults: { _controller: AppBundle:Default:buscador }
+#
+#Servicios
+#
+Servicios:
+    path: /Servicios.html
+    defaults: { _controller: AppBundle:Default:servicios }
+#
+#Servicios de derechos de autor
+#
+ServiciosDerechosAutor:
+    path: /derechos-autor.html
+    defaults: { _controller: AppBundle:Default:serviciosDerechosAutor }
+ServiciosDerechosAutorFase1:
+    path: /obras-fase-uno.html
+    defaults: { _controller: AppBundle:Default:fase1ServiciosDerechosAutor }
+ServiciosDerechosAutorFase2:
+    path: /obras-fase-dos.html
+    defaults: { _controller: AppBundle:Default:fase2ServiciosDerechosAutor }
+ServiciosDerechosAutorFase3:
+    path: /obras-fase-tres.html
+    defaults: { _controller: AppBundle:Default:fase3ServiciosDerechosAutor }
+#
+#Servicios de marcas
+#
+ServiciosMarcas:
+    path: /marcas.html
+    defaults: { _controller: AppBundle:Default:serviciosMarcas }
+ServiciosMarcasFase1:
+    path: /marcas-fase-uno.html
+    defaults: { _controller: AppBundle:Default:serviciosMarcasFase1 }
+ServiciosMarcasFase2:
+    path: /marcas-fase-dos.html
+    defaults: { _controller: AppBundle:Default:serviciosMarcasFase2 }
+ServiciosMarcasFase3:
+    path: /marcas-fase-tres.html
+    defaults: { _controller: AppBundle:Default:serviciosMarcasFase3 }
+#
+#Servicios de marcas internacionales
+#
+ServiciosMarcasInternacionales:
+    path: /Registro-De-Marcas-Internacional.html
+    defaults: { _controller: AppBundle:Default:serviciosMarcasInternacionales }
+#
+#Invenciones
+#
+ServiciosInvenciones:
+    path: /invenciones.html
+    defaults: { _controller: AppBundle:Default:serviciosInvenciones }
+#
+#Reserva de derechos
+#
+ServiciosReservaDerechos:
+    path: /reservas-derechos.html
+    defaults: { _controller: AppBundle:Default:serviciosReservaDerechos }
+ServiciosReservaDerechosFase1:
+    path: /reservas-fase-uno.html
+    defaults: { _controller: AppBundle:Default:serviciosReservaDerechosFase1 }
+ServiciosReservaDerechosFase2:
+    path: /reservas-fase-dos.html
+    defaults: { _controller: AppBundle:Default:serviciosReservaDerechosFase2 }
+ServiciosReservaDerechosFase3:
+    path: /reservas-fase-tres.html
+    defaults: { _controller: AppBundle:Default:serviciosReservaDerechosFase3 }
+#
+#Asesorias
+#
+ServiciosAsesoria:
+    path: /IMPI-Tramites-Problemas.html
+    defaults: { _controller: AppBundle:Default:serviciosAsesoria }
+#
+ServiciosAsesoriaLegal:
+    path: /Asesoria-Legal.html
+    defaults: { _controller: AppBundle:Default:serviciosAsesoriaLegal }
+#
+#Precios
+#
+Precios:
+    path: /Cuanto-Cuesta.html
+    defaults: { _controller: AppBundle:Default:precios }
+#
+#Preguntas Frecuentes
+#
+PreguntasFrecuentesInvenciones:
+    path: /preguntas-invenciones.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesInvenciones }
+PreguntasFrecuentesMarcas:
+    path: /Preguntas-Frecuentes-Registrar-Marcas.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesMarcas }
+PreguntasFrecuentesDerechosAutor:
+    path: /preguntas-registro-obras.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesDerechosAutor }
+PreguntasFrecuentesRegistroDerechos:
+    path: /preguntas-reserva-derechos.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesRegistroDerechos }
+PreguntasFrecuentesISBN:
+    path: /preguntas-isbn.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesMarcas }
+PreguntasFrecuentesISSN:
+    path: /preguntas-issn.html
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesMarcas }
+PreguntasFrecuentesCertificados:
+    path: /preguntas-certificados.html    
+    defaults: { _controller: AppBundle:Default:preguntasFrecuentesMarcas }
+#
+#Garantia de servicios
+#
+garantia:
+    path: /Garantia-Servicios.html
+    defaults: { _controller: AppBundle:Default:garantia }
+#
+# Formularios 
+#
+formularioDerechosAutor:
+    path: /form-obras.html
+    defaults: { _controller: AppBundle:Formularios:solicitudRegistroDerechosAutor }
+formularioReservaDerechos:
+    path: /form-reserva.html
+    defaults: { _controller: AppBundle:Formularios:solicitudRegistroReservaDerechos }
+formularioMarca:
+    path: /form-marcas.html
+    defaults: { _controller: AppBundle:Formularios:solicitudRegistroMarcas } 
+formularioRegistroInternacional:
+    path: /form-registro-internacional.html
+    defaults: { _controller: AppBundle:Formularios:solicitudRegistroInternacional }
+formularioInvenciones:
+    path: /form-invenciones.html
+    defaults: { _controller: AppBundle:Formularios:solicitudRegistroInvencion }
+formularioIMPI:
+    path: /asesoria-proceso.html
+    defaults: { _controller: AppBundle:Default:solicitudAsesoria }
+formularioIMPI2:
+    path: /asesoria-tramite.html
+    defaults: { _controller: AppBundle:Default:solicitudAsesoriaTramite }
+correoIMPI1:
+    path: /Mensaje/IMPI
+    defaults: { _controller: AppBundle:Formularios:solicitudAsesoria }
+#
+# Aviso de privacidad
+#
+avisoPrivacidad:
+    path: /Privacidad.html
+    defaults: { _controller: AppBundle:Default:privacidad }
+#
+# Glosario
+#
+glosario:
+    path: /Glosario.html
+    defaults: { _controller: AppBundle:Default:glosario }

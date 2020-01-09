@@ -1,0 +1,91 @@
+{# Plantilla de servicios de Marcas Fase 2 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerReservaDerechos.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 2: TR&Aacute;MITE DE LA RESERVA AL USO EXCLUSIVO.
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase">
+                            <p class="textoContenido">Con base en los resultados 
+                            de la <span class="textoAzul">FASE 1: DICTAMEN PREVIO
+                            </span>, ingresaremos en tu nombre y representación 
+                            la Solicitud de tu <span class="textoAzul">Reserva de
+                            Derechos</span>, con la cual gozarás de todos los beneficios 
+                            que la ley otorga.                                    
+                            </p>
+                            <p class="textoContenido">Inmediatamente después de 
+                            iniciado el trámite, te enviaremos por correo electrónico 
+                            una copia digital del documento oficial para que 
+                            compruebes su recepción por la autoridad competente.
+                            <p class="textoContenido">
+                            (Búsqueda de Antecedentes) es de $1,185.00 IVA incluido.</p>
+                            <p class="textoContenido">Los precios por este servicio 
+                            varían según se trate de lo que pretendas proteger.</p>
+                            <p class="textoContenido">Para el caso de:</p>
+                            <ul class="textoContenido">
+                                <li>•	Publicaciones y Difusiones periódicas,
+                                    <br>
+                                    <strong>$4,850.00, IVA Incluido</strong>
+                                </li>
+                                <li><br>Si se trata de:
+                                    <ul class="textoContenido">
+                                        <li>•	Nombres de personas o de grupos 
+                                        dedicados a actividades artísticas.</li>
+                                        <li>•	Personajes humanos de caracterización.</li>
+                                        <li>•	Personajes ficticios o simbólicos</li>
+                                        <li>•	Promociones publicitarias</li>
+                                        <li><strong>$6,652.00. IVA incluido</strong></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p class="textoContenido">Todos nuestros precios incluyen 
+                            IVA, pago por derechos federales a la autoridad, y
+                            honorarios.</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% include 'servicios/solicitudReservaDerechos.html.twig' %}
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

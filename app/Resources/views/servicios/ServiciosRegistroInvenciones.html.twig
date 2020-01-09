@@ -1,0 +1,321 @@
+{# Plantilla de la vista de servicios registro de invenciones #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            <!-- Seccion Banner -->
+            {% include 'servicios/bannerInvenciones.html.twig' %}
+            <!-- Fin Sección Banner -->
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase">
+                            <p class="tituloRegistroInvenciones">Goza de la protección que la ley te
+                            otorga por tu creatividad.
+                            </p>
+                            <p class="textoContenido">
+                            Una Invención debidamente protegida es comercializable 
+                            a nivel mundial y representa grandes recompensas
+                            economicas para el Inventor con el Título de Registro.
+                            </p>
+                            <p class="textoContenido">Deja en manos de expertos la protección 
+                            de tu invención, en MARCANDUR&REG; somos especialistas 
+                            en <a href="" class="">Patentes</a>, 
+                            <a href="" class="">Diseños Industriales</a> y 
+                            <a href="" class="">Modelos de Utilidad</a>.</p>  
+                            <p class="textoContenido">Contamos con la experiencia 
+                            y los conocimientos técnicos y legales que se 
+                            requieren para registrar, defender, y ayudarte a
+                            vender tu proyecto de invención en todo el mundo.</p>
+                            <p class="textoContenido">Obtén tu registro por
+                            medio de nosostros en <span class="textoAzul">3 
+                            sencillas Faces</span>, desde la comodidad de tu casa 
+                            u oficina con <span class="textoAzul">rapidez</span>, 
+                            <span class="textoAzul">seguridad </span>
+                            y <span class="textoAzul">absoluta confidencialidad.
+                            </span>
+                            </p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                La propiedad Industrial es un área del derecho
+                                que se desprende de la propiedad intelectual. 
+                                Una de las principales funciones es la de 
+                                proteger los inventos y las innovaciones 
+                                tecnológicas a través de las siguientes figuras 
+                                juridicas.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="{{path('glosario')}}" class="botonPatentes">
+                                        <div class="fondoFigurasJuridicas">
+                                            <div class="textoFigurasJuridicas3">
+                                                PATENTES
+                                                <br>
+                                            </div>
+                                            <div class="textoFigurasJuridicas iconoFlechaDer">
+                                                <span class="btn-link fa-angle-right flecha"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="{{path('glosario')}}" class="botonPatentes">
+                                        <div class="fondoFigurasJuridicas">
+                                            <div class="textoFigurasJuridicas4">
+                                                MODELOS
+                                                <div class="textoFigurasJuridicas2">DE UTILIDAD</div>
+                                            </div>
+                                            <div class="iconoFlechaDer">
+                                                <span class="btn-link fa-angle-right flecha"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="{{path('glosario')}}" class="botonPatentes">
+                                        <div class="fondoFigurasJuridicas">
+                                            <div class="textoFigurasJuridicas4">
+                                                DISEÑOS
+                                                <div class="textoFigurasJuridicas2">INDUSTRIALES</div>
+                                            </div>
+                                            <div class="textoFigurasJuridicas iconoFlechaDer">
+                                                <span href="#" class="btn-link fa-angle-right flecha"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>     
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoFase textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-4 col-md-3 col-sm-12"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div> 
+                </div>
+            </section><!-- Fin Texto -->
+            <section class="well well2"><!-- Fases -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h2>
+                                FASES
+                            </h2>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-8"><!-- Fase 1 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_Busqueda-Internacional-.png')}}"
+                                             class="img-responsive" alt="Estudio de Viabilidad"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 1</p>
+                                        <p class="textoTituloFase4">
+                                        Búsqueda internacional</p>
+                                        <p class="textoTituloFase4">de antecedentes</p>
+                                        <p class="textoTituloInvFase1">$2,897.00 IVA incluido</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoInvFaseI1">
+                                            <p class="textoFase">Antes de solicitar 
+                                            el registro de una invención, es necesario 
+                                            que realicemos para ti una búsqueda 
+                                            profesional, exhaustiva y confidencial 
+                                            de antecedentes a nivel internacional
+                                            para determinar si la invención de 
+                                            que se trate cumple con las condiciones 
+                                            que la ley exige (novedad, actividad 
+                                            inventiva y aplicación industrial.).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Fin Fase 1 -->                            
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 2 -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_Definicion-de-la-Figura-de-Proteccion-y-la-Estrategia-de-Registro.png')}}"
+                                             class="img-responsive" alt="Registro"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 2</p>
+                                        <p class="textoTituloFase4">
+                                        Definición de la Figura de Protección y la 
+                                        Estrategia de Registro</p>
+                                        <p class="textoTituloInvFase1">Sin costo alguno</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFaseI2">
+                                            <p class="textoFase">Partiendo de las 
+                                            características de tu invención y con 
+                                            base en los resultados de la FASE 1, 
+                                            como expertos en Propiedad Industrial, 
+                                            podremos determinar la figura de 
+                                            protección correcta, la conveniencia 
+                                            de solicitar el registro, o bien, 
+                                            indicar si es necesario realizar algún 
+                                            tipo de modificación o mejora al invento 
+                                            con la finalidad de no interferir con 
+                                            un registro obtenido con antelación.</p>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div><!-- Fin Fase 2 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                            <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2"><!-- Fase 3-->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <img src="{{ asset('bundles/app/img/marcandur_servicios_0005_la-redaccion-cientifica-1.png')}}"
+                                             class="img-responsive" alt="Certificado de registro"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p class="textoTituloFase2">Fase 3</p>
+                                        <p class="textoTituloFase4">Redacción de la solicitud</p>
+                                        <p class="textoTituloFase3">
+                                        El costo se define dependiendo de la 
+                                        figura jurídica en la que encaje la Invención</p>
+                                        <p class="textoTituloInvFase1">
+                                        Solicita a tu ejecutivo una estimación 
+                                        de precio</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contenidoFaseI3">
+                                            <p class="textoFase">Nuestro equipo 
+                                            de expertos redactará con absoluta 
+                                            confidencialidad la Solicitud de 
+                                            Registro de tu Patente, Diseño 
+                                            Industrial, o Modelo de Utilidad 
+                                            cumpliendo con las especificaciones 
+                                            de la ley. Esto es de suma importancia 
+                                            pues de su correcto contenido científico, 
+                                            técnico y legal, depende la adecuada 
+                                            protección de tu Invención.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Fin Fase 3 -->
+                            <div class="hidden-lg hidden-md col-sm-2"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>                    
+                    </div>
+                    <div class="row"><!-- Boton más información -->
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a href="{{path('PreguntasFrecuentesInvenciones')}}" class="btn btn-block btn-primary text-center botonMas">
+                                    M&Aacute;S INFORMACI&Oacute;N <span class="fa-angle-right flechaBoton"></span>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioInvenciones') }}" class="btn btn-block btn-primary text-center botonMas">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 hidden-sm"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm"></div>    
+                    </div>
+                </div>        
+            </section><!-- Fin Fases -->
+            <!-- Otros servicios -->
+            {% include 'servicios/otrosServicios3.html.twig' %}
+            <!-- Fin Otros servicios -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/pie.html.twig' %}
+            <!-- Fin Seccion Texto -->    
+        </main> 
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        });
+    </script>
+{% endblock %}

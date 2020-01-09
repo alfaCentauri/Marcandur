@@ -1,0 +1,130 @@
+{# Plantilla de servicios de Marcas Fase 1 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerMarcas.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 2: REGISTRO DE MARCA LOGOTIPO O SLOGAN
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">Desde MARCANDUR podrás solicitar el registro 
+                                de tu <span class="textoAzul">Marca</span> o <span class="textoAzul">Aviso Comercial</span> (slogan) en forma 
+                            rápida, sencilla y segura desde la comodidad de 
+                            tu casa u oficina.                                   
+                            </p>
+                            <p class="textoContenido">Realizaremos todo el proceso de tu registro a 
+                            través de Internet.</p>
+                            <p class="textoContenido">La Fase 2, consiste en presentar de manera 
+                            adecuada y aplicando las estrategias de registro 
+                            sugeridas, tu <span class="textoAzul">Solicitud de Registro</span> ante la 
+                            autoridad federal facultada para conceder el 
+                            <span class="textoAzul">T&iacute;tulo Oficial de Registro</span>, para que a partir de 
+                            ese momento tu Marca o Aviso Comercial (slogan) 
+                            cuenten con la protección que la ley otorga.   
+                            </p>
+                            <p class="textoContenido">
+                                <span class="textoAzul">Las inigualables ventajas 
+                                de tener tu Marca registrada:</span>
+                            </p> 
+                            <ul type="disc" class="textoContenido">
+                                <li>Impides que cualquier persona plagie la 
+                                    imagen que identifica a tus productos o 
+                                    servicios</li>
+                                <li>Podrás ostentar orgullosamente el símbolo 
+                                    ®, o bien, las siglas MR en tu Marca y/o 
+                                    Aviso Comercial (slogan)</li>
+                                <li>Garantizas la preferencia y el reconocimiento 
+                                    de tus consumidores</li>
+                                <li>Sientas las bases para franquiciar tu 
+                                    negocio</li>
+                                <li>Obtienes un registro válido por 10 años 
+                                    (renovables) a nivel nacional</li>
+                            </ul>
+                            <p class="textoContenido">El precio total por la Presentación a Registro 
+                                de tu Marca por cada <span class="textoAzul">clase</span> es de $6,565.00.</p>
+                            <p class="textoContenido">El precio total por la Presentación a Registro 
+                                de tu Aviso Comercial (slogan) por cada <span class="textoAzul">clase</span> 
+                                es de $6,565.00.</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/app/img/icono-PDF.png')}}" alt="icono-PDF" class="img-responsive imagenPDF"/>
+                                    </a>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p class="textoInfor">Para solicitar tu Búsqueda de Antecedentes 
+                                      y tu Estudio de Viabilidad haz clic en el 
+                                      siguiente botón:</p>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioMarca') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

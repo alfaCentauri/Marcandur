@@ -1,0 +1,13 @@
+{# Mensaje de correo para la solicitud del registro de invenciones #}
+<h1>DATOS DE CONTACTO:</h1>
+<p>Nombre completo: {{ invento.contacto.nombre|e }}.</p>
+<p>E-mail: {{ invento.contacto.correo|e }}.</p>
+<p>Teléfono fijo: {{ invento.contacto.telefono|e }}.</p>
+<p>Teléfono celular: {{ invento.contacto.telefonoMovil|e }}.</p>
+<h2>DATOS DE LA INVENCIÓN A REGISTRAR:</h2>
+<p>Asunto: {{ invento.tipoInvento|e }}</p>
+<p>Sintesis: {{ invento.sintesis|e }}</p>
+
+<p>Correo emitido de la sección de Servicios Registro de Invenciones. 
+    URL: http://marcandur.com.mx/invenciones.html
+</p>

@@ -1,0 +1,125 @@
+{# Plantilla de servicios de Marcas Fase 1 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerMarcas.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 3: MONITOREO DURANTE EL PROCESO DE REGISTRO 
+                            Y TITULACI&Oacute;N
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">Finalizada la <span class="textoAzul">Fase 2 de
+                                Presentación a Registro</span> de tu 
+                                <span class="textoAzul">Marca</span> o 
+                                <span class="textoAzul">Aviso Comercial</span> 
+                                (slogan), te enviaremos de inmediato por correo 
+                                electrónico una copia digital del documento 
+                                oficial para que compruebes que tu registro fue 
+                                iniciado.                                   
+                            </p>
+                            <p class="textoContenido">Igualmente te mantendremos 
+                                informado sobre los avances del proceso de 
+                                registro, el cual demora de 3 a 6 meses.</p>
+                            <p class="textoContenido">Recibirás reportes periódicos,
+                                especialmente cuando ocurra algún evento relevante;
+                                o bien, cuando la autoridad emita el Título 
+                                de Registro correspondiente.  
+                            </p>
+                            <p class="textoContenido">Con él tendrás garantizado 
+                                el derecho de Uso Exclusivo de la denominación, 
+                                frase publicitaria, y/o logotipo registrado(s), 
+                                por un periodo de 10 años (renovables), dentro 
+                                de todo el territorio nacional.
+                            </p> 
+                            <p class="textoContenido">El seguimiento profesional 
+                                de tu trámite no representa ningún costo adicional 
+                                para ti, ya que no existen gastos de titulación; 
+                                el Título de Registro se te enviará hasta tu 
+                                domicilio, sin costo adicional para el D.F. 
+                                y área metropolitana.</p>
+                            <p class="textoContenido">¿Quieres saber más? 
+                                Puedes descargar el siguiente documento 
+                                (Formato PDF).</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/app/img/icono-PDF.png')}}" alt="icono-PDF" class="img-responsive imagenPDF"/>
+                                    </a>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p class="textoInfor">Para solicitar tu Búsqueda de Antecedentes 
+                                      y tu Estudio de Viabilidad haz clic en el 
+                                      siguiente botón:</p>
+                                </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioMarca') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

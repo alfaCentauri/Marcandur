@@ -1,0 +1,99 @@
+{# Plantilla de servicios de derechos de autor Fase 1 #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerDerechosAutor.html.twig' %}
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 textoTituloFase">
+                            FASE 1: ENVIO DE LA INFORMACI&Oacute;N
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="">Al tratarse de un <span class="textoAzul">
+                                Registro de Obra,</span> requerimos que nos 
+                                env&iacute;es:                                    
+                            </p>
+                            <ul>
+                                <li>+ Un par de ejemplares de la <span class="textoAzul">Obra</span> que 
+                                    pretendes proteger (impresos o bien almacenados
+                                    electronicamente en CD-ROM, DVD o USB).</li>
+                                <li>+ Una fotocopia de la identificaci&oacute;n oficial 
+                                    del Autor y una Carta Poder Simple firmada, 
+                                    misma que se te har&aacute; llegar de manera 
+                                    electrónica y se encontrará lista para 
+                                    ser impresa y firmada.  </li>
+                                <li>+ En caso de existir m&aacute;s de un autor o 
+                                    colaborador pregunta por la documentaci&oacute;n
+                                    complementaria a tu ejecutivo.</li>
+                                <li>Toda la información del autor así como los
+                                    ejemplares que nos envíes, serán tratados 
+                                    con extremo cuidado y absoluta 
+                                    <span class="textoAzul">confidencialidad</span>.
+                                </li>
+                                <li>Al momento de solicitar este servicio te
+                                    daremos a conocer los datos para que nos 
+                                    envíes lo arriba enlistado, así como las 
+                                    instrucciones para realizar el pago 
+                                    correspondiente.
+                                </li>
+                                <li>Para poder recibir y preparar apropiadamente 
+                                    la información relativa a tu Obra es 
+                                    necesario que nos proporciones los 
+                                    siguientes datos con el fin de poder 
+                                    atenderte y asesorarte:</li>
+                            </ul>                                
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                              <div class="col-lg-4 col-md-4 col-sm-12">
+                                  <a href="{{ path('formularioDerechosAutor') }}" class="btn btn-block btn-primary text-center">Solicita aqu&iacute;</a>
+                              </div>  
+                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,196 @@
+{# Plantilla de la vista contacto #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main>        
+            <!-- Seccion Banner -->
+            <section class="fondoContacto">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="">
+
+                            </div>
+                        </div>
+                    </div>                         
+                  </div>        
+            </section><!-- Fin Banner -->
+            <section class="well well2"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <p class="textoContenido">Reciba la informaci&oacute;n, 
+                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                            contacto contigo.
+                            </p>
+                            <p class="textoContenido">La informaci&oacute;n propocionada 
+                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con 
+                            ABSOLUTA CONFIDENCIALIDAD de acuerdo a nuestro Aviso 
+                            de Privacidad y a la Ley Federal de Protecci&oacute;n 
+                            de Datos Personales en Posesi&oacute;n de Particulares.
+                            </p>    
+                            <p class="textoContenido">Los campos marcados con * 
+                            son requeridos.</p>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>
+            </section><!-- Fin Texto -->
+            <section class="well well4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <h2 class="tituloContacto">
+                            DESEA <strong>INFORMACI&Oacute;N RELACIONADA</strong> CON:
+                            </h2>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <div class="mensaje">
+                                        {{ flashMessage }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <form id="contact-form" class='contact-form' action="{{ path('correo') }}">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="contact-form-loader"></div>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                            <select name="asunto" class="form-control" id="asunto" placeholder="Seleccione su asunto">
+                                                <option value="Registro de Marcas" selected="">Registro de Marcas</option>
+                                                <option value="Oficios emitidos por el IMPI">Oficios emitidos por el IMPI</option>
+                                                <option value="Registro de Obras">Registro de Obras</option>
+                                                <option value="Reserva de Derechos">Reserva de Derechos</option>
+                                                <option value="Requisitos para Circulación de Revistas/Periódicos">Requisitos para Circulación de Revistas/Periódicos</option>
+                                                <option value="Certificados de Licitud de Título y Contenido">Certificados de Licitud de Título y Contenido</option>
+                                                <option value="ISSN">ISSN</option>
+                                                <option value="ISBN">ISBN</option>
+                                                <option value="Invenciones y Creaciones (Patentes)">Invenciones y Creaciones (Patentes)</option>
+                                                <option value="Procedimientos Administrativos y Judiciales">Procedimientos Administrativos y Judiciales</option>
+                                                <option value="Consulta Jurídica">Consulta Jurídica</option>
+                                                <option value="Otra">Otra</option>
+                                            </select>                                            
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">                                
+                                          <!-- label class="name">Nombre:</label --> 
+                                            <input type="text" name="name" id="name" placeholder="Nombre:" value="" class="form-control" required tooltip="Este campo es requerido" />
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                          <!-- label class="email">Email:</label --> 
+                                            <input type="email" name="email" placeholder="Email:" value="" class="form-control" required tooltip="Escribe tu correo electr&oacute;nico" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                          <!-- label class="phone">Teléfono (No celular):</label --> 
+                                              <input type="number" name="phone" placeholder="Teléfono (No celular):" value="" class="form-control" required tooltip="Escribe tu n&uacute;mero de tel&eacute;fono fijo"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12"> 
+                                          <!-- label class="phone">Celular o Nextel:</label --> 
+                                            <input type="number" name="phone2" placeholder="Celular o Nextel:" value="" class="form-control" required tooltip="Escribe tu n&uacute;mero de tel&eacute;fono celular"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12"> 
+                                          <!--label class="message">Comentarios:</label--> 
+                                            <textarea name="message" placeholder="Escribe aquí tus comentarios" maxlength="2000" class="form-control" required tooltip="Escribe tus comentarios"></textarea>
+                                        </div>    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="g-recaptcha" data-sitekey="6LdUT3YUAAAAANol1EiO67pot2b-pVo5As5ukhDE"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> 
+                                            <!--  <label class="recaptcha"> <span class="empty-message">*Este campo es requerido.</span> </label> -->
+                                            <div class="btn-wr text-primary">
+                                                <input type="submit" value="ENVIAR" name="enviar" class="btn btn-primary btn-block text-center"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12"> </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                </div>        
+            </section>
+        <footer>
+            <section class="fondoGris">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 textoDireccion">
+                            <p>Av. Adolfo López Mateos #20</p>
+                            <p>Piso 3, Col. Santa Cruz del Monte , Naucalpan</p>
+                            <p>C.P. 53110</p>
+                            <p>CONTACT&Aacute;NOS DE MANERA INMEDIATA A LOS TEL&Eacute;FONOS (0155)5373-2996,(0155)2789-7524</p>
+                            <p>+52-1-55-7112-6384 contacto@marcandur.com</p>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+            <section class="well1">
+                <div class="container"> 
+                    <p class="rights text-center">
+                        MARCANDUR &#169; <span id="copyright-year"></span>
+                        <a href="index-5.html">Privacy Policy</a>
+                    </p>          
+                </div> 
+            </section>    
+        </footer>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu4").setAttribute("class","active");
+/*************************** Tooltip ***************************************/
+            $('[data-toggle="tooltip"]').tooltip();              
+        });
+        function Mensaje(){
+            alert("Mensaje enviado");
+        }
+    </script>
+{% endblock %}
+

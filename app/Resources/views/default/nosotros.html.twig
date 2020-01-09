@@ -1,0 +1,144 @@
+{# Plantilla de la vista nosotros #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+<style>
+    .fondoNosotros{
+        background-image: url("{{ asset('bundles/app/img/marcandur_nosotros_0000_quienes--somos.png')}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 540px;
+    }
+
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+    <!-- Contenido -->
+        <main> 
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h3 class="TituloNosotros">
+                                    ¿QUI&Eacute;NES SOMOS?
+                                </h3>
+                                <img src="{{ asset('bundles/app/img/marcandur_nosotros_0000_quienes--somos.png') }}" 
+                                    class="img-responsive imagenNosotros" alt="Qui&eacute;nes somos"/>
+                                <p class="texto textoNosotros">
+                                <strong>MARCANDUR®</strong> es una firma mexicana cuyo objetivo es 
+                                ofrecer <strong>servicios legales y asesor&iacute;a profesional en 
+                                materia de Propiedad Intelectual</strong>, de forma eficaz y 
+                                sencilla, a personas y organizaciones que ambicionan 
+                                fortalecer su empresa o negocio, a trav&eacute;s de la 
+                                consolidaci&oacute;n de su imagen corporativa mediante el 
+                                registro de su Marca y Aviso Comercial (slogan), o 
+                                bien; que deseen aportar a la ciencia o la cultura 
+                                una invenci&oacute;n o concepci&oacute;n art&iacute;­stica, que sea 
+                                susceptible de protecci&oacute;n legal por medio de una 
+                                Patente de Invenci&oacute;n o el Derecho de Autor, con el 
+                                fin de <strong>garantizar la explotaci&oacute;n comercial exclusiva 
+                                en favor de su leg&iacute;timo creador</strong>.
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h3 class="TituloNosotros">
+                                    NUESTRA MISI&Oacute;N
+                                </h3>          
+                                <img src="{{ asset('bundles/app/img/marcandur_nosotros_0001.png') }}" 
+                                    class="img-responsive imagenNosotros" alt="NUESTRA MISI&Oacute;N"/>
+                                <p class="texto textoNosotros">
+                                 Consiste en <strong>poner al alcance de cualquier emprendedor 
+                                que busque destacar por encima de sus competidores</strong>, 
+                                o a quienes han sido favorecidos con el talento de 
+                                la creatividad, la asesor&iacute;a jur&iacute;dica especializada y 
+                                la experiencia profesional que nos respalda, para 
+                                proteger sus activos intelectuales.
+                                </p>
+                                <p class="textoNosotros">
+                                Para ello <strong>MARCANDUR®</strong> maximiza los beneficios tecnol&oacute;gicos 
+                                acercándonos a nuestros clientes, con un servicio rápido 
+                                y confiable, principalmente a trav&eacute;s de Internet, 
+                                permiti&eacute;ndoles <strong>obtener la protecci&oacute;n legal a la que 
+                                tienen leg&iacute;timo derecho</strong>, desde la comodidad de su 
+                                casa u oficina en cualquier parte del mundo, siendo 
+                                en todo momento atendidos de forma personalizada por 
+                                asesores especializados en materia de Propiedad Intelectual.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 textoGris">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                Te ofrecemos la asesor&iacute;a profesional, 
+                                legal y comercial que necesitas para que tu 
+                                empresa deje huella en la preferencia de tus 
+                                clientes.
+                                </div>
+                            </div>                                
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12">                                        
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <a href="{{ path('garantia') }}">
+                                    <table border="0" style="width: 100%;">
+                                        <tbody class="botonGarantia">
+                                            <tr>
+                                                <th class="textoConoce">CONOCE NUESTRA</th>
+                                                <th rowspan="2">
+                                                    <span class="btn-link fa-angle-right flecha"></span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="textoConoce2" align="center">
+                                                    GARANTIA DE SERVICIOS 
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </a>
+                                </div>  
+                                <div class="col-lg-3 col-md-3 col-sm-12"></div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>                        
+                </div>        
+            </section><!-- Fin Texto -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <section class="well well1">
+                {% include 'default/seccionServicios.html.twig' %}
+            </section>
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'default/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu2").setAttribute("class","active");
+        })
+    </script>
+{% endblock %}

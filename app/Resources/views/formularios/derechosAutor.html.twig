@@ -1,0 +1,624 @@
+{# Plantilla del formulario de derechos de autor #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/select2-bootstrap.css') }}" />
+    <!-- select 2 -->
+    <link href="{{ asset('bundles/app/css/select2.css') }}" rel="stylesheet" />
+    <!-- Bootstrap Datepicker -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap-datepicker3.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/jquery-ui.css') }}" />
+<style>
+    .input-group .form-control {
+        width: 100% !important;
+    }
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerDerechosAutor.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <div class="mensaje">
+                                        {{ flashMessage }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="panel no-margin panel-primary">
+                                <div class="panel-heading"><!-- Encabezado  -->
+                                    <div class="tituloFormulario">FORMA ELECTR&Oacute;NICA DE REGISTRO DE OBRAS</div>
+                                </div><!-- Fin encabezado  -->
+                                <div class="panel-body general-container"><!-- Panel Body  -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                                            <p class="textoContenido">Recibida la informaci&oacute;n, 
+                                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                                            contacto contigo.                                    
+                                            </p>
+                                            <p class="textoContenido">La informaci&oacute;n proporcionada
+                                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con ABSOLUTA 
+                                            CONFIDENCIALIDAD de acuerdo a nuestro <span class="textoAzul">Aviso de Privacidad</span>
+                                            y a la Ley Federal de Protecci&oacute;n de Datos Personales 
+                                            en Posesi&oacute;n de Particulares.</p>
+                                            <p class=""><strong>Nota:</strong> Los campos señalados con 
+                                            <span class="required">*</span> en 
+                                            el formulario son obligatorios, para
+                                            procesar su solicitud.</p>
+                                        </div>
+                                    </div>
+                                    {{ form_start(formulario) }}
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="panel panel-default"><!-- Panel datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE CONTACTO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->  
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Campos Obligatorios | Tiempo de llenado de 
+                                                                este formato: 3 minutos</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.nombre, 'Nombre completo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.nombre, { 'attr': {'class': 'form-control'} }) }}
+                                                                {{ form_errors(formulario.contacto.nombre) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.correo, 'E-mail ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.correo) }}
+                                                                {{ form_errors(formulario.contacto.correo) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefono, 'Teléfono fijo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                <p class="textoFormulario">(no celular)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefono) }}
+                                                                {{ form_errors(formulario.contacto.telefono) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefonoMovil, 'Teléfono celular ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefonoMovil) }}
+                                                                {{ form_errors(formulario.contacto.telefonoMovil) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel datos de la obra -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE LA OBRA A REGISTRAR</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.titulo, 'Título de la obra ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                                                {{ form_widget(formulario.titulo) }}
+                                                                {{ form_errors(formulario.titulo) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.sintesis, 'Síntesis o Contenido de la Obra ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                                                {{ form_widget(formulario.sintesis) }}
+                                                                {{ form_errors(formulario.sintesis) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.rama, 'Rama ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_widget(formulario.rama) }}
+                                                                {{ form_errors(formulario.rama) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.dadaAConocer, '¿Se ha dado ha conocer? ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                {{ form_widget(formulario.dadaAConocer) }}
+                                                                {{ form_errors(formulario.dadaAConocer) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.fecha, 'Desde que fecha ', {'label_attr': {'class': 'etiqueta'} }) }}
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <div class="input-group">
+                                                                    {{ form_widget(formulario.fecha) }}
+                                                                    {{ form_errors(formulario.fecha) }}
+                                                                    <div class="input-group-addon">
+                                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.derivada, '¿Su obra surge de otra ya existente? ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                {{ form_widget(formulario.derivada) }}
+                                                                {{ form_errors(formulario.derivada) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.tituloOriginal, 'Especifique de qué obra se deriva, así como el título de dicha obra: ', {'label_attr': {'class': 'etiqueta'} }) }}
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                                                {{ form_widget(formulario.tituloOriginal) }}
+                                                                {{ form_errors(formulario.tituloOriginal) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.autor, 'Nombre del autor: ', {'label_attr': {'class': 'etiqueta'} }) }}
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                                                {{ form_widget(formulario.autor) }}
+                                                                {{ form_errors(formulario.autor) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de la obra -->
+                                                <div class="panel panel-default" id="colaboradores">
+                                                    <div class="panel-heading">
+                                                        <div class="tituloFormulario2">
+                                                            DATOS DEL AUTOR O COLABORADOR DE LA OBRA <span class="required">*</span>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="panel-body"><!-- Formulario de autores -->
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Para agregar un &oacute; m&aacute;s autor(es) 
+                                                                o colaborador(es) rellene los campos y presione el boton agregar.
+                                                                </p>
+                                                            </div><!-- FIN MENSAJE DE AYUDA -->
+                                                        </div>
+                                                        <div class="row"><!-- LINEA 1  -->
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                {#{ form_label(formulario.colaborador.nombre, 'Nombre Completo: ', {'label_attr': {'class': 'etiqueta'} }) }#}
+                                                                <label for="nombreColaborador" class="etiqueta">Nombre Completo: </label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {#{ form_widget(formulario.colaborador.nombre) }}
+                                                                {{ form_errors(formulario.colaborador.nombre) }#}  
+                                                                <input name="nombreColaborador" id="nombreColaborador" type="text" class="form-control" placeholder="Apellido, Nombre">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="fechaNacimientoColaborador" class="etiqueta">Fecha de nacimiento:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <div class="input-group">
+                                                                    {#{ form_widget(formulario.colaborador.fechaNacimiento) }}
+                                                                    {{ form_errors(formulario.colaborador.fechaNacimiento) }#}
+                                                                    <input name="fechaNacimientoColaborador" id="fechaNacimientoColaborador" type="date" class="form-control" placeholder="00/00/0000">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Fin LINEA 1  -->
+                                                        <div class="row"><!-- LINEA 2  -->
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="lugarNacimiento" class="etiqueta">Lugar de Nacimiento:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {#{ form_widget(formulario.colaborador.lugarNacimiento) }}
+                                                                {{ form_errors(formulario.colaborador.lugarNacimiento) }#}
+                                                                <input name="lugarNacimiento" id="lugarNacimiento" type="text" class="form-control" placeholder="Ciudad, Pa&iacute;s">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="RFC" class="etiqueta">RFC:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <input name="RFC" id="RFC" type="text" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div><!-- Fin LINEA 2  -->
+                                                        <div class="row"><!-- LINEA 3  -->
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="nacionalidad" class="etiqueta">Nacionalidad:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <input name="nacionalidad" id="nacionalidad" type="text" class="form-control" placeholder="Nacionalidad">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                <label for="porcentaje" class="etiqueta">Porcentaje de participaci&oacute;n:</label>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <div class="input-group">
+                                                                    <input name="porcentaje" id="porcentaje" type="text" class="form-control" placeholder="00">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="">%</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Fin LINEA 3  -->
+                                                        <div class="row"><!-- LINEA 4  -->
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_label(formulario.titular, 'El titular será el mismo autor: ', {'label_attr': {'class': 'etiqueta'} }) }}
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                                                {{ form_widget(formulario.titular) }}
+                                                                {{ form_errors(formulario.titular) }}
+                                                            </div>
+                                                        </div><!-- Fin LINEA 4  -->
+                                                        <div class="row"><!-- LINEA 5  -->
+                                                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                                    <a herf="" class="btn btn-block btn-success botonAgregar" 
+                                                                       onclick="AgregarColaborador(); genera_tabla();" 
+                                                                       data-toggle="tooltip" title="Agrega un autor o colaborador"> 
+                                                                    Agregar <span class="fa fa-plus"></span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                                                        </div><!-- Fin LINEA 5  -->
+                                                        <div class="row"><!-- LINEA 6  -->
+                                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                                {{ form_widget(formulario.listaColaboradores) }}
+                                                                <div id="autores"><!--Muestra los autores agregados -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Fin LINEA 6  --> 
+                                                    </div><!-- Fin Panel body -->
+                                                </div><!-- Fin Panel -->
+                                                <div class="panel panel-default"><!-- Panel domicilio -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DOMICILIO <span class="required">*</span></div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.calle, 'Calle o Avenida: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.calle) }}
+                                                                {{ form_errors(formulario.domicilio.calle) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.numero, 'Número: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.numero) }}
+                                                                {{ form_errors(formulario.domicilio.numero) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.municipio, 'Municipio o delegación: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span> 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.municipio) }}
+                                                                {{ form_errors(formulario.domicilio.municipio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.ciudad, 'Ciudad o Población: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                      
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.ciudad) }}
+                                                                {{ form_errors(formulario.domicilio.ciudad) }}
+                                                            </div>                        
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.estado, 'Estado: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.estado) }}
+                                                                {{ form_errors(formulario.domicilio.estado) }}                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.pais, 'País: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.pais) }}
+                                                                {{ form_errors(formulario.domicilio.pais) }}
+                                                            </div>                        
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.domicilio.codigoPostal, 'Código postal: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.domicilio.codigoPostal) }}
+                                                                {{ form_errors(formulario.domicilio.codigoPostal) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+
+                                                            </div>                        
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel Domicilio -->   
+                                                <div class="panel panel-default"><!-- Panel otros datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">OTROS DATOS DE CONTACTO TELÉFONOS Y CORREO ELECTRONICO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoDomicilio, 'Teléfono Domicilio: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoDomicilio) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoDomicilio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoOficina, 'Teléfono Oficina: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoOficina) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoOficina) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.telefonoMovil, 'Teléfono Móvil: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.telefonoMovil) }}
+                                                                {{ form_errors(formulario.OtrosContactos.telefonoMovil) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.fax, 'Fax: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.fax) }}
+                                                                {{ form_errors(formulario.OtrosContactos.fax) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">    
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_label(formulario.OtrosContactos.correo, 'E-mail: ', {'label_attr': {'class': 'etiqueta'} }) }} 
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                                                {{ form_widget(formulario.OtrosContactos.correo) }}
+                                                                {{ form_errors(formulario.OtrosContactos.correo) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel otros datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel Datos de facturacion -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE FACTURACION <span class="required">*</span></div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">La factura se expide con los datos 
+                                                                que nos proporciones en este bloque y pueden variar respecto 
+                                                                a los del titular de la marca.
+                                                                </p>
+                                                            </div><!-- FIN MENSAJE DE AYUDA -->
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.razonSocial, 'Nombre Completo o razón social: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                       
+                                                                <p class="textoFormulario">(Persona moral o física)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.razonSocial) }}
+                                                                {{ form_errors(formulario.factura.razonSocial) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.RFC, 'RFC: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.RFC) }}
+                                                                {{ form_errors(formulario.factura.RFC) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.domicilio, 'Domicilio Fiscal completo: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.domicilio) }}
+                                                                {{ form_errors(formulario.factura.domicilio) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.factura.codigoPostal, 'Código Postal: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.factura.codigoPostal) }}
+                                                                {{ form_errors(formulario.factura.codigoPostal) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel Datos de facturacion -->
+                                            </div>                          
+                                        </div>
+                                        <div class="row"><!-- Mensaje -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <p class="textoContenido">
+                                                MARCANDUR es una Marca Registrada. Este
+                                                sitio web es propiedad de DURAN CABAÑAS 
+                                                Y ASOCIADOS, S.C., cuyo domicilio está 
+                                                indicado al pie de esta página, como 
+                                                responsable del resguardo y correcto 
+                                                uso de cualquier Información Personal
+                                                proporcionada en este formulario.
+                                                </p>
+                                                <p class="textoContenido">
+                                                Al presionar el botón ENVIAR FORMULARIO,
+                                                Usted manifiesta estar de acuerdo en que
+                                                su información sea protegida por las 
+                                                leyes mexicanas, y las cláusulas de 
+                                                nuestro <a href="{{path('avisoPrivacidad')}}">Aviso de Privacidad</a>.</p>
+                                            </div>
+                                        </div><!-- Fin Mensaje -->
+                                        <div class="row"><!-- Botones -->
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <input type="reset" value="Cancelar" id="cancelar" name="cancelar" class="btn btn-block" data-toggle="tooltip" title="Borra el formulario">
+                                            </div>
+                                            <div class="col-lg-4 col-md-2 hidden-sm">
+                                                
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <button id="enviar" type="submit" class="btn btn-block btn-success botonAgregar" 
+                                                        data-toggle="tooltip" title="Envía el formulario">
+                                                    Enviar <span class="fa fa-paper-plane"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                        </div><!-- Fin Botones -->
+                                    {{ form_end(formulario) }}<!-- Fin Formulario  -->
+                                </div><!-- Fin Panel Body  -->
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>        
+            </section><!-- Fin Formulario -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Colaboradores -->
+    <script src="{{ asset('bundles/app/js/TablaColaboradores.js') }}" type="text/javascript"></script>
+    <!-- select2 -->
+    <script src="{{ asset('bundles/app/js/select2.min.js') }}" type="text/javascript"></script>
+    <!-- datepicker -->
+    <script src="{{ asset('bundles/app/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/app/js/bootstrap-datepicker.es.js') }}" type="text/javascript"></script>
+    <script>
+// Obtiene la ul que contiene la colección de etiquetas
+    var collectionHolder = $('tbody tr');
+    // configura una enlace "Agregar un colaborador"
+    var $botonAgregarColaborador = $('<a href="#" class="btn btn-block btn-info" id=""><span class="fa fa-plus"></span></a>');
+    var $newLinkLi = $('<td></td>').append($botonAgregarColaborador);
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+    /***********************Select2********************************************/        
+            $('.js-example-basic-single-multiple').select2({
+                placeholder: 'Seleccione una opccion',
+                lenguage:"es"
+            });            
+            $('.js-example-basic-single').select2();   
+/*************************** Calendario ***************************************/
+            $('.js-datepicker').datepicker({
+                format: "yyyy-mm-dd",
+                todayBtn: true,
+                language: "es",
+            });
+            localStorage.clear();
+/*************************** Tabla ******************************/
+    // Añade el ancla "Agregar un colaborador" y las etiquetas td y tr
+    collectionHolder.append($newLinkLi);
+    // cuenta las entradas actuales en el formulario (p. ej. 2),
+    // la usa como índice al insertar un nuevo elemento (p. ej. 2)
+    collectionHolder.data('index', collectionHolder.find(':input').length);
+    $botonAgregarColaborador.on('click', function(e) {
+        // evita crear el enlace con una "#" en la URL
+        e.preventDefault();
+        // añade una nueva etiqueta form (ve el siguiente bloque de código)
+        addTagForm(collectionHolder, $newLinkLi);
+    });
+        });/*Fin función ready*/
+/************************** Activar la fecha *********************************/
+    $(document).on('change', '#registro_derechos_autor_dadaAConocer_0', function ActivarFecha() {
+        if(document.getElementById("registro_derechos_autor_dadaAConocer_0").checked){
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("disabled");
+        }
+        else{
+            document.getElementById("registro_derechos_autor_fecha").setAttribute("disabled",true);
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("required");
+        }
+    });
+    $(document).on('change', '#registro_derechos_autor_dadaAConocer_1', function ActivarFecha() {
+        if(!document.getElementById("registro_derechos_autor_dadaAConocer_1").checked){
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("disabled");
+        }
+        else{
+            document.getElementById("registro_derechos_autor_fecha").setAttribute("disabled",true);
+            document.getElementById("registro_derechos_autor_fecha").removeAttribute("required");
+        }
+    });
+/**************** Activar los datos de la obra ********************************/
+    $(document).on('change', '#registro_derechos_autor_derivada_0',function ActivarDatos(){
+        if(document.getElementById("registro_derechos_autor_derivada_0").checked){
+                document.getElementById("registro_derechos_autor_tituloOriginal").removeAttribute("disabled");
+                document.getElementById("registro_derechos_autor_autor").removeAttribute("disabled");
+            }
+            else{
+                document.getElementById("registro_derechos_autor_tituloOriginal").setAttribute("disabled",true);
+                document.getElementById("registro_derechos_autor_autor").setAttribute("disabled",true);
+            }
+    });
+    $(document).on('change', '#registro_derechos_autor_derivada_1',function ActivarDatos(){
+        if(!document.getElementById("registro_derechos_autor_derivada_1").checked){
+                document.getElementById("registro_derechos_autor_tituloOriginal").removeAttribute("disabled");
+                document.getElementById("registro_derechos_autor_autor").removeAttribute("disabled");
+            }
+            else{
+                document.getElementById("registro_derechos_autor_tituloOriginal").setAttribute("disabled",true);
+                document.getElementById("registro_derechos_autor_autor").setAttribute("disabled",true);
+            }
+    });
+/**************** Acción onclick del boton agregar autores. *******************/    
+    $('.botonAgregar').on('click', function(e){
+        var nombre = document.getElementById("nombreColaborador").value;
+        var fecha = document.getElementById("fechaNacimientoColaborador").value;
+        var lugar = document.getElementById("lugarNacimiento").value;
+        var rfc = document.getElementById("RFC").value;
+        var nacionalidad = document.getElementById("nacionalidad").value;
+        var porcentaje = document.getElementById("porcentaje").value;
+        var linea = document.getElementById("registro_derechos_autor_listaColaboradores").value;
+        var linea2="Nombre completo: "+nombre+";Fecha de nacimiento: "+fecha+";Lugar de nacimiento: "+lugar+";RFC: "+rfc+";Nacionalidad: "+nacionalidad+";Porcentaje de participación: "+porcentaje;
+        document.getElementById("registro_derechos_autor_listaColaboradores").value=linea.concat("|",linea2);
+    });
+    </script>
+{% endblock %}
+

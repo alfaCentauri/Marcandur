@@ -1,0 +1,216 @@
+{# Plantilla del formulario de derechos de autor #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- select 2 -->
+    <link href="{{ asset('bundles/app/css/select2.min.css') }}" rel="stylesheet" />
+<style>
+    .input-group .form-control {
+        width: 100% !important;
+    }
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerIMPI.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <div class="mensaje">
+                                        {{ flashMessage }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="panel no-margin panel-primary">
+                                <div class="panel-heading"><!-- Encabezado  -->
+                                    <div class="tituloFormulario">FORMA ELECTR&Oacute;NICA DE SOLICITUD DE ASESORIAS</div>
+                                </div><!-- Fin encabezado  -->
+                                <div class="panel-body general-container"><!-- Panel Body  -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                                            <p class="textoContenido">Recibida la informaci&oacute;n, 
+                                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                                            contacto contigo.                                    
+                                            </p>
+                                            <p class="textoContenido">La informaci&oacute;n proporcionada
+                                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con ABSOLUTA 
+                                            CONFIDENCIALIDAD de acuerdo a nuestro <span class="textoAzul">Aviso de Privacidad</span>
+                                            y a la Ley Federal de Protecci&oacute;n de Datos Personales 
+                                            en Posesi&oacute;n de Particulares.</p>
+                                            <p class=""><strong>Nota:</strong> Los campos señalados con 
+                                            <span class="required">*</span> en 
+                                            el formulario son obligatorios, para
+                                            procesar su solicitud.</p>
+                                        </div>
+                                    </div>
+                                    <form name="formulario1" method="post" action="{{ path('correoIMPI1') }}"><!-- Formulario 1  -->
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="panel panel-default"><!-- Panel datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE CONTACTO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->   
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Campos Obligatorios | Tiempo de llenado de 
+                                                                este formato: 3 minutos</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <label for="nombre" class="etiqueta">Nombre completo <span class="required">*</span></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <input name="nombre" id="nombre" type="text" class="form-control" required="required" placeholder="Indica tu nombre completo">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <label for="email" class="etiqueta">E-mail <span class="required">*</span></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <input name="email" id="email" type="email" class="form-control" required="required" placeholder="usuario@dominio.com">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <label for="telefono" class="etiqueta">Tel&eacute;fono fijo <span class="required">*</span></label>
+                                                                <p class="textoFormulario">(no celular)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <input name="telefono" id="telefono" type="number" class="form-control" required="required" placeholder="000000000">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <label for="telefonoMovil" class="etiqueta">Tel&eacute;fono celular </label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                <input name="telefonoMovil" id="telefonoMovil" type="number" class="form-control" placeholder="000000000">
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel de la asesoria -->
+                                                    <div class="panel-heading"><!-- Encabezado del Panel --> 
+                                                        <div class="tituloFormulario2">DATOS DE LA ASESORIA <span class="required">*</span></div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <label class="etiqueta" for="asesoria">Asunto &oacute; caso</label>
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                                                <input type="text" name="asesoria" id="asesoria" class="form-control" value="" placeholder="Escriba su asunto">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                <label class="etiqueta" for="comentarios">Detalles del caso</label>
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-6">
+                                                                <textarea id="comentarios" name="comentarios" placeholder="Escribe aquí los comentarios pertinentes a su caso" maxlength="5000" class="form-control" required tooltip="Escribe aquí tus comentarios"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel -->
+                                                </div><!-- Fin Panel de la asesoria -->
+                                            </div>                          
+                                        </div>
+                                        <div class="row"><!-- Mensaje -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <p class="textoContenido">
+                                                MARCANDUR es una Marca Registrada. Este
+                                                sitio web es propiedad de DURAN CABAÑAS 
+                                                Y ASOCIADOS, S.C., cuyo domicilio está 
+                                                indicado al pie de esta página, como 
+                                                responsable del resguardo y correcto 
+                                                uso de cualquier Información Personal
+                                                proporcionada en este formulario.
+                                                </p>
+                                                <p class="textoContenido">
+                                                Al presionar el botón ENVIAR FORMULARIO,
+                                                Usted manifiesta estar de acuerdo en que
+                                                su información sea protegida por las 
+                                                leyes mexicanas, y las cláusulas de 
+                                                nuestro <a href="{{path('avisoPrivacidad')}}">Aviso de Privacidad</a>.</p>
+                                            </div>
+                                        </div><!-- Fin Mensaje -->
+                                        <div class="row"><!-- Botones -->
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <input type="reset" value="Cancelar" id="cancelar" name="cancelar" class="btn btn-block" data-toggle="tooltip" title="Borra el formulario">
+                                            </div>
+                                            <div class="col-lg-4 col-md-2 hidden-sm">
+                                                
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <button type="submit" class="btn btn-block btn-success botonAgregar" data-toggle="tooltip" title="Envía el formulario">
+                                                    Enviar <span class="fa fa-paper-plane"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                        </div><!-- Fin Botones -->
+                                    </form><!-- Fin Formulario 1  -->
+                                </div><!-- Fin Panel Body  -->
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                    </div>
+                    </form>
+                </div>        
+            </section><!-- Fin Formulario -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!-- select2 -->
+    <script src="{{ asset('bundles/app/js/select2.min.js') }}" type="text/javascript"></script>
+    <!-- Tooltip -->
+    <script src="{{ asset('bundles/app/js/tooltip.js') }}" type="text/javascript"></script>
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+    /***********************Select2********************************************/        
+            $('.js-example-basic-single-multiple').select2({
+                placeholder: 'Seleccione una opccion',
+                lenguage:"es"
+            });            
+            $('.js-example-basic-single').select2();            
+        });
+/*************************** Enviar formulario ********************************/
+        function enviarFormulario(){ 
+           document.formulario1.submit();
+        }
+/*************************** Agregar colaborador ******************************/
+    </script>
+{% endblock %}
+

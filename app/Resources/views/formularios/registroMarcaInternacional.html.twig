@@ -1,0 +1,235 @@
+{# Formulario de solicitud de registro de marcas internacionales. #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/select2-3.5.2/select2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/select2-bootstrap.css') }}" />
+    <!-- select 2 -->
+    <link href="{{ asset('bundles/app/css/select2.min.css') }}" rel="stylesheet" />
+<style>
+    .panel-success > .panel-body {
+      border-top-color: #d6e9c6;
+      background-color: #d6e9c6;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="page">
+        <!-- Encabezado -->
+        {% include 'default/encabezado.html.twig' %}
+        <!-- Fin de Encabezado -->
+        <!-- Contenido -->
+        <main> 
+            {% include 'servicios/bannerMarcasInternacionales.html.twig' %}
+            <section class="well well3"><!-- Texto -->
+                <div class="container">
+                    {% for flashMessage in app.session.flashbag.get('notificacion') %}
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <div class="mensaje">
+                                        {{ flashMessage }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="panel no-margin panel-primary">
+                                <div class="panel-heading"><!-- Encabezado  -->
+                                    <div class="tituloFormulario">FORMA ELECTR&Oacute;NICA PARA EL REGISTRO DE MARCAS EN EL EXTRANJERO</div>
+                                </div><!-- Fin encabezado  -->
+                                <div class="panel-body general-container"><!-- Panel Body  -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 textoFase">
+                                            <p class="textoContenido">Recibida la informaci&oacute;n, 
+                                            en menos de 5 horas h&aacute;biles nos pondremos en 
+                                            contacto contigo.                                    
+                                            </p>
+                                            <p class="textoContenido">La informaci&oacute;n proporcionada
+                                            a trav&eacute;s de MARCANDUR.COM ser&aacute; tratada con ABSOLUTA 
+                                            CONFIDENCIALIDAD de acuerdo a nuestro <span class="textoAzul">Aviso de Privacidad</span> 
+                                            y a la Ley Federal de Protecci&oacute;n de Datos Personales 
+                                            en Posesi&oacute;n de Particulares.</p>
+                                            <p class=""><strong>Nota:</strong> Los campos señalados con 
+                                            <span class="requerido">*</span> en 
+                                            el formulario son obligatorios, para
+                                            procesar su solicitud.</p>
+                                        </div>
+                                    </div>
+                                    {{ form_start(formulario) }}
+                                    <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="panel panel-default"><!-- Panel datos de contacto -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE CONTACTO</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->  
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12"><!-- MENSAJE DE AYUDA -->
+                                                                <p class="textoFormulario">Campos Obligatorios | Tiempo de llenado de 
+                                                                este formato: 3 minutos</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.nombre, 'Nombre completo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.nombre, { 'attr': {'class': 'form-control'} }) }}
+                                                                {{ form_errors(formulario.contacto.nombre) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.correo, 'E-mail ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.correo) }}
+                                                                {{ form_errors(formulario.contacto.correo) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefono, 'Teléfono fijo ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                <p class="textoFormulario">(no celular)</p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefono) }}
+                                                                {{ form_errors(formulario.contacto.telefono) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.contacto.telefonoMovil, 'Teléfono celular ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_widget(formulario.contacto.telefonoMovil) }}
+                                                                {{ form_errors(formulario.contacto.telefonoMovil) }}
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Fin Contenido del Panel --> 
+                                                </div><!-- Fin Panel datos de contacto -->
+                                                <div class="panel panel-default"><!-- Panel reserva de Marca -->   
+                                                    <div class="panel-heading"><!-- Encabezado del Panel -->  
+                                                        <div class="tituloFormulario2">DATOS DE LA MARCA A REGISTRAR</div>
+                                                    </div><!-- Fin Encabezado del Panel -->
+                                                    <div class="panel-body"><!-- Contenido del Panel -->   
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.pais, 'Desea registrar su marca en ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_widget(formulario.pais) }}
+                                                                {{ form_errors(formulario.pais) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.registraAnterior, '¿Cuenta con registro en México? ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>                                                                 
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                {{ form_widget(formulario.registraAnterior) }}
+                                                                {{ form_errors(formulario.registraAnterior) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.nombre, 'Nombre o denominación de la marca a registrar: ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                                {{ form_widget(formulario.nombre) }}
+                                                                {{ form_errors(formulario.nombre) }}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.tieneLogotipo, '¿Cuenta con Logotipo? ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                                {{ form_widget(formulario.tieneLogotipo) }}
+                                                                {{ form_errors(formulario.tieneLogotipo) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                                {{ form_label(formulario.tieneLogotipo, 'Comentarios ', {'label_attr': {'class': 'etiqueta'} }) }} <span class="requerido">*</span>
+                                                                <p class="textoFormulario">(Anote todo aquello que crea conveniente)</p>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                                                {{ form_widget(formulario.comentarios) }}
+                                                                {{ form_errors(formulario.comentarios) }}
+                                                            </div>
+                                                        </div>                                                            
+                                                    </div>
+                                                </div> <!-- Fin de panel reserva de Marca  -->                                                
+                                            </div><!-- Fin Col -->
+                                        </div><!-- Fin row -->
+                                        <div class="row"><!-- Mensaje -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <p class="textoContenido">
+                                                MARCANDUR es una Marca Registrada. Este
+                                                sitio web es propiedad de DURAN CABAÑAS 
+                                                Y ASOCIADOS, S.C., cuyo domicilio está 
+                                                indicado al pie de esta página, como 
+                                                responsable del resguardo y correcto 
+                                                uso de cualquier Información Personal
+                                                proporcionada en este formulario.
+                                                </p>
+                                                <p class="textoContenido">
+                                                Al presionar el botón ENVIAR FORMULARIO,
+                                                Usted manifiesta estar de acuerdo en que
+                                                su información sea protegida por las 
+                                                leyes mexicanas, y las cláusulas de 
+                                                nuestro <a href="{{path('avisoPrivacidad')}}">Aviso de Privacidad</a>.</p>
+                                            </div>
+                                        </div><!-- Fin Mensaje -->
+                                        <div class="row"><!-- Botones -->
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <input type="reset" value="Cancelar" id="cancelar" name="cancelar" class="btn btn-block" data-toggle="tooltip" title="Borra el formulario">
+                                            </div>
+                                            <div class="col-lg-4 col-md-2 hidden-sm">
+                                                
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                                <button type="submit" class="btn btn-block btn-success botonAgregar" data-toggle="tooltip" title="Envía el formulario">
+                                                    Enviar <span class="fa fa-paper-plane"></span>
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 hidden-sm"></div>
+                                        </div><!-- Fin Botones -->
+                                    {{ form_end(formulario) }}<!-- Fin Formulario  -->
+                                </div><!-- Fin Panel general -->
+                            </div><!-- Fin Panel datos de contacto -->
+                        </div><!-- Fin col -->
+                    </div><!-- Fin row -->
+                </div><!-- Fin container -->
+            </section><!-- Fin Formulario -->
+            <!-- Conoce mas -->
+            {% include 'servicios/conoceMas.html.twig' %}
+            <!-- Fin Conoce mas -->
+            <!-- Preguntas Frecuentes -->
+            {% include 'servicios/preguntasFrecuentes.html.twig' %}
+            <!-- Fin Preguntas Frecuentes -->
+            <!-- Seccion Texto -->
+            {% include 'servicios/texto.html.twig' %}
+            <!-- Fin Seccion Texto --> 
+        </main><!-- Fin contenido -->
+        {% include 'servicios/pie.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!-- select2 -->
+    <script src="{{ asset('bundles/app/js/select2.min.js') }}" type="text/javascript"></script>
+    <script>
+        $(document).ready( function(){
+            document.getElementById("menu1").removeAttribute("class");
+            document.getElementById("menu3").setAttribute("class","dropdown active");
+    /***********************Select2********************************************/        
+            $('.js-example-basic-single-multiple').select2({
+                placeholder: 'Seleccione una opccion',
+                lenguage:"es"
+            });            
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+{% endblock %}
