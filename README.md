@@ -1,5 +1,6 @@
 # Marcandur
 =========
+
 Sitio web oficial de la empresa Marcandur, desarrollado en Symfony. Contiene envíos de correos electrónicos.
 
 A Symfony project created on July 5, 2018, 9:49 pm.
@@ -17,21 +18,21 @@ Para ejecutar el sitio web debe abrir el archivo *web/app.php*
 Author: ricardopresilla@gmail.com <ricardo@AVALON>
 Date:   Fri Jul 12 20:12:38 2019 -0430
 
-    **Mejoras al Formulario de solicitud de registro reserva de derechos y en
-    el correo.**
+    Mejoras al Formulario de solicitud de registro reserva de derechos y en
+    el correo.
 
 ***commit 43943aeb21c0abd23845d7ae31e1916e42f13d93***
 Author: ricardopresilla@gmail.com <ricardo@AVALON>
 Date:   Fri Jul 12 14:53:36 2019 -0430
 
-    **Mejoras al Formulario de solicitud de registro de derechos de autor y en
-    el correo.**
+    Mejoras al Formulario de solicitud de registro de derechos de autor y en
+    el correo.
 
 ***commit c8aaf9fbcaa59c277f94ddc0363fdac3419d7b3f***
 Author: ricardopresilla@gmail.com <ricardo@AVALON>
 Date:   Fri Jul 12 14:39:26 2019 -0430
 
-    **Mejoras al Formulario de solicitud de registro de derechos de autor.**
+    Mejoras al Formulario de solicitud de registro de derechos de autor.
 
 ***commit 33cef18cb27093669c8b9d013a9dd2f264104d47***
 Author: ricardopresilla@gmail.com <ricardo@AVALON>
